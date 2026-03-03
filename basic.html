@@ -3,6 +3,8 @@
     <head>
         
         <title>HTML basics</title>
+
+        <link rel="icon" type="image/png"  href="asset/icon.png">
     </head>
     <body>
         <h1>HTML Elements</h1>
@@ -13,7 +15,7 @@
         <p style="color:blue">Style attribute to add style to an element</p>
         <br>
         <a href="https://www.w3schools.com/html/html_attributes.asp">Visit html attribute tutorial</a><br>
-        <img src="image.jpg" alt="Describe the image" width="200px" height="200px"><br>
+        <img src="asset/image.jpg" alt="Describe the image" width="200px" height="200px"><br>
         <p title="title attribute display the tooltip when mouse is over the element">TITLE Attribute</p><br>
         <hr>
         <h1>HTML Heading</h1>
@@ -82,6 +84,17 @@ Here is an abbreviation: <abbr title="World Wide Web">WWW</abbr></p><br>
     a:active{
         color: yellow;
     }
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th{
+    background-color: green;
+    color: white;
+}
+.table-responsive {
+        overflow-x: auto;
+    }
  </style>
 <hr>
 <h1>HTML Links</h1>
@@ -98,7 +111,229 @@ Here is an abbreviation: <abbr title="World Wide Web">WWW</abbr></p><br>
 <h3>Download link</h3>
 <p><a href="html.pdf" download>Download pdf</a></p>
 <h3>Image as link</h3>
-<a href="https://www.w3schools.com/html/html_images.asp"><img src="image.jpg" alt="click me" width="200" height="200">Image Link</a>
+<a href="https://www.w3schools.com/html/html_images.asp"><img src="asset/image.jpg" alt="click me" width="200" height="200">Image Link</a>
+
+
+
+<p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+The image will float to the right of the text.</p>
+
+<p><img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+The image will float to the left of the text.</p>
+
+
+<hr>
+<h1> HTML TABLES</h1>
+<table>
+    <caption>student table</caption>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>phone</th>
+    </tr>
+    <tr>
+        <td>anu</td>
+        <td>20</td><td>9807908767</td>
+    </tr>
+    <tr><td>priya</td><td>21</td><td>7689456738</td></tr>
+</table>
+<h3>Table using colspan</h3>
+<table>
+    <tr>
+        <th colspan="2">Name</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>Sathiya</td>
+        <td>jothi</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td colspan="2">Hema</td>
+        <td>21</td>
+    </tr>
+</table>
+<h3>Table using rowspan</h3>
+<table>
+    <tr>
+        <th rowspan="2">phone</th>
+        <td>personal</td>
+        <td>9089708909</td>
+    </tr>
+    <tr>
+        <td>work</td>
+        <td>9098980978</td>
+    </tr>
+    <tr>
+        <th rowspan="2">mail</th>
+        <td>personal</td>
+        <td>anushiya123@gmail.com</td>
+    </tr>
+    <tr>
+        <td>work</td><td>anushiyaarun@gmail.com</td>
+    </tr>
+</table>
+<br>
+<table>
+    <thead>
+        <tr><th colspan="4">Student Grade Report</th>
+        </tr>
+        <tr><th>student</th>
+        <th>subject</th>
+        <th>grade</th><th>status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="3">Deena</td>
+            <td>Maths</td><td>91</td><td>pass</td>
+        </tr>
+        <tr><td>Science</td>
+        <td>86</td><td>pass</td></tr>
+        <tr>
+            <td>English</td>
+            <td>92</td>
+            <td>pass</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Saga</td>
+            <td>Maths</td>
+            <td>93</td><td>pass</td>
+
+        </tr>
+        <tr>
+            <td>Science</td><td>89</td><td>pass</td>
+        </tr>
+        <tr><td>English</td><td>79</td><td>pass</td></tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total Student</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td colspan="3">Average Mark</td>
+            <td>88.4</td>
+        </tr>
+    </tfoot>
+</table>
+<h3>Resposive table (with Scroll)</h3>
+<div class="table-responsive">
+    <table style="width:150%;">
+        <tr> 
+             <th>Header 1</th><th>Header 2</th><th>Header 3</th>
+                <th>Header 4</th><th>Header 5</th><th>Header 6</th>
+                <th>Header 7</th><th>Header 8</th><th>Header 9</th>
+                <th>Header 10</th>
+        </tr>
+                <tr>
+                    <td>Data 1</td><td>Data 2</td><td>Data 3</td>
+                <td>Data 4</td><td>Data 5</td><td>Data 6</td>
+                <td>Data 7</td><td>Data 8</td><td>Data 9</td>
+                <td>Data 10</td>
+                </tr>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Unordered List</h2>
+    <h3>defauld</h3>
+    <ul>
+        <li>apple</li>
+        <li>mango</li>
+        <li>banana</li>
+    </ul>
+    <h3>circle type</h3>
+    <ul type="circle">
+        <li>apple</li>
+        <li>mango</li>
+        <li>banana</li>
+    </ul>
+    <h3>square type</h3>
+    <ul type="square">
+        <li>apple</li>
+        <li>mango</li>
+        <li>banana</li>
+    </ul>
+    <ul style="list-style-type:none">
+        <li>apple</li>
+        <li>mango</li>
+        <li>banana</li>
+    </ul>
+</div>
+<div class="container">
+    <h2>Ordered List</h2>
+    <ol>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <h3>uppercase Letter</h3>
+    <ol type="A">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <h3>lowercase letter</h3>
+    <ol type="a">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <h3>Roman numerals(uppercase)</h3>
+    <ol type="I">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol> 
+    <h3>roman numerals(lower)</h3>
+    <ol type="i">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <ol start="5">
+        <li>five</li>
+        <li>six</li><li>seven</li>
+    </ol>
+    <h3>reversed order</h3>
+    <ol reversed>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ol>
+    </ol>
+    <h3> Nested List</h3>
+    <ul>
+        <li>Citrus
+                        <ul>
+                            <li>Orange</li>
+                            <li>Lemon</li>
+                            <li>Lime</li>
+                        </ul>
+                    </li>
+                    <li>Berries
+                        <ul>
+                            <li>Strawberry</li>
+                            <li>Blueberry</li>
+                            <li>Raspberry</li>
+                        </ul>
+                    </li>
+     </ul>
+</div>
+<div class="cointainer">
+    <h2>Discription List</h2>
+    <dl>
+        <dt><strong>HTML</strong></dt>
+        <dd>HyperText Markup Language - the standard markup language for web page</dd>
+        <dt><strong>CSS</strong></dt>
+        <dd>Cascading Style Sheets - used for styling HTML elements</dd>
+        <dt><strong>JavaScript</strong></dt>
+        <dd>Programming language that adds interactivity to websites</dd>
+    </dl>
+</div>
+
+
 
 
 <h2 id="contact">contact</h2>
