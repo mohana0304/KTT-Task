@@ -333,6 +333,69 @@ The image will float to the left of the text.</p>
     </dl>
 </div>
 
+<form action="/submit-form" method="POST">
+    <label for="fullname">Full Name:</label><br>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="Enter your mail id" required><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
+    <label for="birthday">DOB:</label><br>
+    <input type="date" id="birthday" name="birthday" placeholder="Enter your birthday" required><br>
+    <label for="age">Age:</label><br>
+    <input type="number" min="18" max="100" required><br>
+
+    <!--radio-->
+    <fieldset>
+        <legend>Gender:</legend>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">other</label><br>
+    </fieldset>
+
+    <!--checkbox-->
+       <fieldset>
+        <legend>Hobbies:</legend>
+        <input type="checkbox" id="reading" name="hobbies" value="reading">
+        <label for="reading">Reading</label><br>
+        <input type="checkbox" id="music" name="hobbies" value="music">
+        <label for="music">Music</label><br>
+    <input type="checkbox" id="sport" name="hobbies" value="sport">
+        <label for="sport">Sports</label><br>
+        <input type="checkbox" id="travel" name="hobbies" value="travel">
+        <label for="travel">Travel</label><br>
+    </fieldset>
+
+    <!--dropdown slect-->
+
+    <label for="country">Country:</label><br>
+    <select id="country" name="country">
+        <option value="">Select a country</option>
+        <option value="USA">United States</option>
+        <option value="canada">Canada</option>
+        <option value="UK">United Kingdom</option>
+        <option value="australia">Australia</option>
+        <option value="other">other</option>
+    </select><br>
+
+    <!--textarea-->
+    <label for="message">Message</label><br>
+    <textarea id="message" name="message" row="5" cols="50" placeholder="Enter your message here..."></textarea><br>
+
+    <!--file upload-->
+    <label for="file">Upload File:</label><br>
+    <input type="file" id="file" name="file"><br><br>
+
+    <input type="submit" value="submit">
+    <input type="reset" value="Reset">
+
+
+</form>
+
+
 
 
 
