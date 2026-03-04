@@ -95,21 +95,39 @@ th{
 .table-responsive {
         overflow-x: auto;
     }
+.testbtn{
+    background-color: rgb(153, 111, 192);
+    color: blanchedalmond;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+}
  </style>
 <hr>
 <h1>HTML Links</h1>
 <h3>Baisc link</h3>
 <a href="https://www.w3schools.com/html/html_links.asp">visit html link</a>
+
+
 <h3>link with target</h3>
 <p><a href="https://www.w3schools.com/html/html_links.asp" target="_self">open in same window</a></p>
 <p><a href="https://www.w3schools.com/html/html_links.asp" target="_balnk">open in new window</a></p>
+
+
 <h3>Email link</h3>
 <p><a href="mailto:kmohanapriya0304@gmail.com">send mail</a></p>
 <p><a href="#contact">jump to contact</a></p>
+
+
 <h3>phone link</h3>
 <p><a href="tel:9759780465">call 9759780465</a></p>
+
+
 <h3>Download link</h3>
 <p><a href="html.pdf" download>Download pdf</a></p>
+
+
 <h3>Image as link</h3>
 <a href="https://www.w3schools.com/html/html_images.asp"><img src="asset/image.jpg" alt="click me" width="200" height="200">Image Link</a>
 
@@ -394,10 +412,28 @@ The image will float to the left of the text.</p>
 
 
 </form>
+<br>
+
+<h2> Button </h2>
+
+<button >click me</button>
+<button class="testbtn">Button</button>
+<button onclick="alert('Welcome')">submit</button>
+<br><br>
 
 
+<!-- Iframe -->
+<div>
+    <iframe src="asset\tilixia-summer-drink-25280_128.gif" name="iframe_a" height="200" width="200" style="border:none;" title="iframe Example"></iframe>
+    <p><a href="asset\van3ssa-snow-flower-6878_128.gif"  target="iframe_a">HTML JavaScript</a></p>
+</div>
 
-
+<button type="button" onclick="document.getElementById('date').innerHTML= Date()">Date</button>
+<button type="button" onclick="document.getElementById('date').innerHTML= confirm('Are you sure?')">confirm</button>
+<button type="button" onclick="document.getElementById('date').innerHTML= prompt('enter your name:')">enter name </button>
+<!--<p id="confirm"></p>
+<p id="user"></p>-->
+<p id="date"></p>
 
 <h2 id="contact">contact</h2>
 <p>linkedin<br>whatsapp<br>mailid<br>phonenumber<br></p>
