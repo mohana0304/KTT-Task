@@ -351,7 +351,7 @@ The image will float to the left of the text.</p>
     </dl>
 </div>
 
-<form action="/submit-form" method="POST">
+<form action="/submit-form" method="POST" autocomplete="on" novalidate>
     <label for="fullname">Full Name:</label><br>
     <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required><br>
     <label for="email">Email:</label><br>
@@ -397,8 +397,15 @@ The image will float to the left of the text.</p>
         <option value="UK">United Kingdom</option>
         <option value="australia">Australia</option>
         <option value="other">other</option>
-    </select><br>
+    </select><br><br>
 
+<input list="browser" name="browser">
+<datalist id="browser">
+    <option value="edge"/>
+    <option value="safari"/>
+    <option value="firebox"/>
+    <option value="chrome"/>
+</datalist><br>
     <!--textarea-->
     <label for="message">Message</label><br>
     <textarea id="message" name="message" row="5" cols="50" placeholder="Enter your message here..."></textarea><br>
@@ -413,7 +420,15 @@ The image will float to the left of the text.</p>
 
 </form>
 <br>
+<form action="/submit-form" oninput="x.value=parseInt(a.value)-parseInt(b.value)">
+    0
+    <input type="range" id="a" max="200">
+    200 -
+    <input type="number" id="b" value="10">
+    =
+    <output id="x" for="a b"></output>
 
+</form><br>
 <h2> Button </h2>
 
 <button >click me</button>
@@ -435,6 +450,20 @@ The image will float to the left of the text.</p>
 <p id="user"></p>-->
 <p id="date"></p>
 
+
+
+<br>
+<!--<img src="asset/image.jpg" style="width: 100%;">-->
+<img src="asset/image.jpg" style="max-width: 100%;height:auto;">
+<br>
+<picture>
+    <source srcset="asset\van3ssa-snow-flower-6878_128.gif" media="(max-width:600px)">
+    <source srcset="asset/icon.png" media="(max-width:1500px)">
+    <source srcset="asset\tilixia-summer-drink-25280_128.gif">
+    <img src="asset/image.jpg" alt="image" style="width:auto;">
+<br>
+<h1 style="font-size:10vw">Resposive Text</h1>
+</picture>
 <h2 id="contact">contact</h2>
 <p>linkedin<br>whatsapp<br>mailid<br>phonenumber<br></p>
     </body>
