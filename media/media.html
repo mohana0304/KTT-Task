@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Media</title>
+    </head>
+    <body>
+        <header>
+            <h2 style="color: rgb(228, 185, 43);">My video Channel</h2>
+        </header>
+        <main>
+            <section>
+                <h2>Now Playing</h2>
+                <video id="mainVideo" width="800" height="450" controls autoplay>
+                    <source src="tiger.mp4" type="video/mp4">
+                </video>
+                <h3 id="videoTitle">White Tiger</h3>            
+                <p id="views">12589 views</p>
+            </section>
+            <article>
+                <table>
+                    <tr onclick="changeVideo('video.mp4', 'Penguin','125898 views')" style="cursor: pointer;">
+                        <td>
+                            <video width="200" height="120" src="video.mp4"></video>
+                        </td>
+                        <td>
+                            <b>Penguin</b><br>
+                            <small>125898 views</small>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+            <article>
+                <table>
+                    <tr onclick="changeVideo('flamingos.mp4', 'flamingos','19875 views')" style="cursor: pointer;">
+                        <td>
+                            <video width="200" height="120" src="flamingos.mp4"></video>
+                        </td>
+                        <td>
+                            <b>flamingos</b><br>
+                            <small>19875 views</small>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+            <article>
+                <table>
+                    <tr onclick="changeVideo('cats.mp4', 'cats','19005 views')" style="cursor: pointer;">
+                        <td>
+                            <video width="200" height="120" src="cats.mp4"></video>
+                        </td>
+                        <td>
+                            <b>cats</b><br>
+                            <small>19005 views</small>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+            <article>
+                <table>
+                    <tr onclick="changeVideo('tiger.mp4', 'tiger','12589 views')" style="cursor: pointer;">
+                        <td>
+                            <video width="200" height="120" src="tiger.mp4"></video>
+                        </td>
+                        <td>
+                            <b>tigers</b><br>
+                            <small>12589 views views</small>
+                        </td>
+                    </tr>
+                </table>
+            </article>
+        </main>
+
+        <script>
+            function changeVideo(src, title,views) {
+                document.getElementById('mainVideo').src = src;
+                document.getElementById('videoTitle').innerText = title;
+                document.getElementById('views').innerText = views;
+            }
+        </script>
+    </body>
+</html>
