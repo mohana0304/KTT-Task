@@ -1,0 +1,12 @@
+assets/
+images/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.ico
+*.psd
+*.ai
+*.mp4
+media/

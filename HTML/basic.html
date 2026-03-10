@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>HTML basics</title>
+
+        <link rel="icon" type="image/png"  href="asset/icon.png">
+    </head>
+    <body>
+        <h1>HTML Elements</h1>
+        <p>The HTML element is everything from the start tag to the end tag</p>
+        <p>br - break line<br>hr - horizontal line</p>
+        <hr>
+        <h1>HTML Attributes</h1>
+        <p style="color:blue">Style attribute to add style to an element</p>
+        <br>
+        <a href="https://www.w3schools.com/html/html_attributes.asp">Visit html attribute tutorial</a><br>
+        <img src="asset/image.jpg" alt="Describe the image" width="200px" height="200px"><br>
+        <p title="title attribute display the tooltip when mouse is over the element">TITLE Attribute</p><br>
+        <hr>
+        <h1>HTML Heading</h1>
+        <h2>Food Menu</h2>
+        <h3>Main course</h3>
+        <h5>Chole Masala</h5>
+        <h5>Aloo Gobi</h5>
+        <h3>Starters</h3>
+        <h5>Gobi Manchurian</h5>
+        <h5> Paneer Tikka</h5>
+        <hr>
+        <p>This is the first paragraph. It will have some space below it.</p><br>
+        <p>This is the second paragraph.</p>
+        <pre>
+This text is preformatted.
+    It preserves spaces
+        and line breaks.
+    </pre>
+    <hr>
+    <h1 style="color:green; font-family:arial;font-size:20px;text-align:center;">HTML STYLE</h1>
+    <p style="text-decoration:underline;">underline the text</p>
+    <p style="text-transform: uppercase;">uppercase</p>
+    <p style="font-weight:bold;">bold the text</p>
+    <p style="font-style: Italic;">italic font style</p>
+    <hr>
+    <pre>This is <b>bold</b> text. 
+        This is <strong>important</strong> text. 
+        This is <i>italic</i> text. 
+        This is <em>emphasized</em> text. 
+        This is <mark>marked</mark> text. 
+        This is <small>small</small> text. 
+        This is <del>deleted</del> text. 
+        This is <ins>inserted</ins> text. 
+        This is H<sub>2</sub>O (subscript).
+        This is 10<sup>th</sup> (superscript).
+        </pre>
+    <hr>
+    <h1>HTML Quotation</h1>
+    <blockquote>
+    The only limit to our realization of tomorrow is our doubts of today.
+</blockquote>
+<p>Oscar Wilde side that<q>Be yourself; everyone else is already taken.</q><br>
+Here is an abbreviation: <abbr title="World Wide Web">WWW</abbr></p><br>
+<address>Stemuns Building,<br>
+     Salem Main Road,<br>
+     Sankari Taluk,<br>
+     Salem-637301<br></address>
+<p><cite>Oscar Wilde</cite> side that<q>Be yourself; everyone else is already taken.</q></p>
+<p><bdo dir="rtl">This text will be written from right to left</bdo></p>
+
+<!-- command line -->
+
+
+
+<!-- style link color-->
+ <style>
+    a:link{
+        color:green;
+    }
+    a:visited{
+        color: purple;
+    }
+    a:hover{
+        color: red;
+    }
+    a:active{
+        color: yellow;
+    }
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th{
+    background-color: green;
+    color: white;
+}
+.table-responsive {
+        overflow-x: auto;
+    }
+.testbtn{
+    background-color: rgb(153, 111, 192);
+    color: blanchedalmond;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+}
+ </style>
+<hr>
+<h1>HTML Links</h1>
+<h3>Baisc link</h3>
+<a href="https://www.w3schools.com/html/html_links.asp">visit html link</a>
+
+
+<h3>link with target</h3>
+<p><a href="https://www.w3schools.com/html/html_links.asp" target="_self">open in same window</a></p>
+<p><a href="https://www.w3schools.com/html/html_links.asp" target="_balnk">open in new window</a></p>
+
+
+<h3>Email link</h3>
+<p><a href="mailto:kmohanapriya0304@gmail.com">send mail</a></p>
+<p><a href="#contact">jump to contact</a></p>
+
+
+<h3>phone link</h3>
+<p><a href="tel:9759780465">call 9759780465</a></p>
+
+
+<h3>Download link</h3>
+<p><a href="html.pdf" download>Download pdf</a></p>
+
+
+<h3>Image as link</h3>
+<a href="https://www.w3schools.com/html/html_images.asp"><img src="asset/image.jpg" alt="click me" width="200" height="200">Image Link</a>
+
+
+
+<p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+The image will float to the right of the text.</p>
+
+<p><img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+The image will float to the left of the text.</p>
+
+
+<hr>
+<h1> HTML TABLES</h1>
+<table>
+    <caption>student table</caption>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>phone</th>
+    </tr>
+    <tr>
+        <td>anu</td>
+        <td>20</td><td>9807908767</td>
+    </tr>
+    <tr><td>priya</td><td>21</td><td>7689456738</td></tr>
+</table>
+<h3>Table using colspan</h3>
+<table>
+    <tr>
+        <th colspan="2">Name</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>Sathiya</td>
+        <td>jothi</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td colspan="2">Hema</td>
+        <td>21</td>
+    </tr>
+</table>
+<h3>Table using rowspan</h3>
+<table>
+    <tr>
+        <th rowspan="2">phone</th>
+        <td>personal</td>
+        <td>9089708909</td>
+    </tr>
+    <tr>
+        <td>work</td>
+        <td>9098980978</td>
+    </tr>
+    <tr>
+        <th rowspan="2">mail</th>
+        <td>personal</td>
+        <td>anushiya123@gmail.com</td>
+    </tr>
+    <tr>
+        <td>work</td><td>anushiyaarun@gmail.com</td>
+    </tr>
+</table>
+<br>
+<table>
+    <thead>
+        <tr><th colspan="4">Student Grade Report</th>
+        </tr>
+        <tr><th>student</th>
+        <th>subject</th>
+        <th>grade</th><th>status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="3">Deena</td>
+            <td>Maths</td><td>91</td><td>pass</td>
+        </tr>
+        <tr><td>Science</td>
+        <td>86</td><td>pass</td></tr>
+        <tr>
+            <td>English</td>
+            <td>92</td>
+            <td>pass</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Saga</td>
+            <td>Maths</td>
+            <td>93</td><td>pass</td>
+
+        </tr>
+        <tr>
+            <td>Science</td><td>89</td><td>pass</td>
+        </tr>
+        <tr><td>English</td><td>79</td><td>pass</td></tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total Student</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td colspan="3">Average Mark</td>
+            <td>88.4</td>
+        </tr>
+    </tfoot>
+</table>
+<h3>Resposive table (with Scroll)</h3>
+<div class="table-responsive">
+    <table style="width:150%;">
+        <tr> 
+             <th>Header 1</th><th>Header 2</th><th>Header 3</th>
+                <th>Header 4</th><th>Header 5</th><th>Header 6</th>
+                <th>Header 7</th><th>Header 8</th><th>Header 9</th>
+                <th>Header 10</th>
+        </tr>
+                <tr>
+                    <td>Data 1</td><td>Data 2</td><td>Data 3</td>
+                <td>Data 4</td><td>Data 5</td><td>Data 6</td>
+                <td>Data 7</td><td>Data 8</td><td>Data 9</td>
+                <td>Data 10</td>
+                </tr>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Unordered List</h2>
+    <h3>defauld</h3>
+    <ul>
+        <li>apple</li>
+        <li>mango</li>
+        <li>banana</li>
+    </ul>
+    <h3>circle type</h3>
+    <ul type="circle">
+        <li>apple</li>
+        <li>mango</li>
+        <li>banana</li>
+    </ul>
+    <h3>square type</h3>
+    <ul type="square">
+        <li>apple</li>
+        <li>mango</li>
+        <li>banana</li>
+    </ul>
+    <ul style="list-style-type:none">
+        <li>apple</li>
+        <li>mango</li>
+        <li>banana</li>
+    </ul>
+</div>
+<div class="container">
+    <h2>Ordered List</h2>
+    <ol>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <h3>uppercase Letter</h3>
+    <ol type="A">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <h3>lowercase letter</h3>
+    <ol type="a">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <h3>Roman numerals(uppercase)</h3>
+    <ol type="I">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol> 
+    <h3>roman numerals(lower)</h3>
+    <ol type="i">
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+    </ol>
+    <ol start="5">
+        <li>five</li>
+        <li>six</li><li>seven</li>
+    </ol>
+    <h3>reversed order</h3>
+    <ol reversed>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ol>
+    </ol>
+    <h3> Nested List</h3>
+    <ul>
+        <li>Citrus
+                        <ul>
+                            <li>Orange</li>
+                            <li>Lemon</li>
+                            <li>Lime</li>
+                        </ul>
+                    </li>
+                    <li>Berries
+                        <ul>
+                            <li>Strawberry</li>
+                            <li>Blueberry</li>
+                            <li>Raspberry</li>
+                        </ul>
+                    </li>
+     </ul>
+</div>
+<div class="cointainer">
+    <h2>Discription List</h2>
+    <dl>
+        <dt><strong>HTML</strong></dt>
+        <dd>HyperText Markup Language - the standard markup language for web page</dd>
+        <dt><strong>CSS</strong></dt>
+        <dd>Cascading Style Sheets - used for styling HTML elements</dd>
+        <dt><strong>JavaScript</strong></dt>
+        <dd>Programming language that adds interactivity to websites</dd>
+    </dl>
+</div>
+
+<form action="/submit-form" method="POST" autocomplete="on" novalidate>
+    <label for="fullname">Full Name:</label><br>
+    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="Enter your mail id" required><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
+    <label for="birthday">DOB:</label><br>
+    <input type="date" id="birthday" name="birthday" placeholder="Enter your birthday" required><br>
+    <label for="age">Age:</label><br>
+    <input type="number" min="18" max="100" required><br>
+
+    <!--radio-->
+    <fieldset>
+        <legend>Gender:</legend>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">other</label><br>
+    </fieldset>
+
+    <!--checkbox-->
+       <fieldset>
+        <legend>Hobbies:</legend>
+        <input type="checkbox" id="reading" name="hobbies" value="reading">
+        <label for="reading">Reading</label><br>
+        <input type="checkbox" id="music" name="hobbies" value="music">
+        <label for="music">Music</label><br>
+    <input type="checkbox" id="sport" name="hobbies" value="sport">
+        <label for="sport">Sports</label><br>
+        <input type="checkbox" id="travel" name="hobbies" value="travel">
+        <label for="travel">Travel</label><br>
+    </fieldset>
+
+    <!--dropdown slect-->
+
+    <label for="country">Country:</label><br>
+    <select id="country" name="country">
+        <option value="">Select a country</option>
+        <option value="USA">United States</option>
+        <option value="canada">Canada</option>
+        <option value="UK">United Kingdom</option>
+        <option value="australia">Australia</option>
+        <option value="other">other</option>
+    </select><br><br>
+
+<input list="browser" name="browser">
+<datalist id="browser">
+    <option value="edge"/>
+    <option value="safari"/>
+    <option value="firebox"/>
+    <option value="chrome"/>
+</datalist><br>
+    <!--textarea-->
+    <label for="message">Message</label><br>
+    <textarea id="message" name="message" row="5" cols="50" placeholder="Enter your message here..."></textarea><br>
+
+    <!--file upload-->
+    <label for="file">Upload File:</label><br>
+    <input type="file" id="file" name="file"><br><br>
+
+    <input type="submit" value="submit">
+    <input type="reset" value="Reset">
+
+
+</form>
+<br>
+<form action="/submit-form" oninput="x.value=parseInt(a.value)-parseInt(b.value)">
+    0
+    <input type="range" id="a" max="200">
+    200 -
+    <input type="number" id="b" value="10">
+    =
+    <output id="x" for="a b"></output>
+
+</form><br>
+<h2> Button </h2>
+
+<button >click me</button>
+<button class="testbtn">Button</button>
+<button onclick="alert('Welcome')">submit</button>
+<br><br>
+
+
+<!-- Iframe -->
+<div>
+    <iframe src="asset\tilixia-summer-drink-25280_128.gif" name="iframe_a" height="200" width="200" style="border:none;" title="iframe Example"></iframe>
+    <p><a href="asset\van3ssa-snow-flower-6878_128.gif"  target="iframe_a">HTML JavaScript</a></p>
+</div>
+
+<button type="button" onclick="document.getElementById('date').innerHTML= Date()">Date</button>
+<button type="button" onclick="document.getElementById('date').innerHTML= confirm('Are you sure?')">confirm</button>
+<button type="button" onclick="document.getElementById('date').innerHTML= prompt('enter your name:')">enter name </button>
+<!--<p id="confirm"></p>
+<p id="user"></p>-->
+<p id="date"></p>
+
+
+
+<br>
+<!--<img src="asset/image.jpg" style="width: 100%;">-->
+<img src="asset/image.jpg" style="max-width: 100%;height:auto;">
+<br>
+<picture>
+    <source srcset="asset\van3ssa-snow-flower-6878_128.gif" media="(max-width:600px)">
+    <source srcset="asset\tilixia-summer-drink-25280_128.gif" media="(max-width:1500px)">
+    <source srcset="asset\icon.png">
+    <img src="asset/image.jpg" alt="image" style="width:auto;">
+<br>
+<h1 style="font-size:10vw">Resposive Text</h1>
+</picture>
+
+<br>
+<canvas id="mycanvas" width="200" height="200" style="border: 1px solid rgb(0, 0, 0);"></canvas>
+<script>
+    var c=document.getElementById("mycanvas");
+    var ctx=c.getContext('2d');
+    ctx.font="30px arial";
+    ctx.fillText("Welcome...",10,50);
+
+</script>
+<object data="asset\tilixia-summer-drink-25280_128.gif"></object>
+<embed src="task\boy.jpg">
+<embed width="100%" height="500px" src="calender.html">
+
+<h2 id="contact">contact</h2>
+<p>linkedin<br>whatsapp<br>mailid<br>phonenumber<br></p>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>SeachPage</title>
+    </head>
+    <body>
+                <header>
+            <img src="asset/Disney Logo.jpg" style="height: 40px; width: auto;" alt="Disney Logo">
+            <nav>
+                <a href="main.html">HOME</a>
+                <a href="search.html">SEARCH</a>
+                <a href="watchlist.html">WATCHLIST</a>
+                <a href="movies.html">MOVIES</a>
+                <a href="series.html">SERIES</a>
+                <a href="sport.html">SPORTS</a>
+            </nav>
+           <div class="log"><button id="login" onclick="location.href='loginform.html'">LOGIN</button></div>
+        </header>
+        <search align="center">
+            <form onsubmit="event.preventDefault();">
+                <input name="search" id="search" placeholder="Search here..">
+            </form>
+        </search>
+        <br><br>
+        <div class="btn-grid">
+                    <button type="button" class="btn" onclick="search.value='Walt Disney'"><img src="asset/walt.jpg" alt="Disney"></button>
+                    <button type="button" class="btn" onclick="search.value='Pixar Studio'"><img src="asset/pixar.jpg" alt="Pixar"></button>
+                    <button type="button" class="btn" onclick="search.value='Marvel Studio'"><img src="asset/marvel.jpg" alt="Marvel"></button>
+                    <button type="button" class="btn" onclick="search.value='Start Wars'"><img src="asset/starwar.jpg" alt="Star Wars"></button>
+                    <button type="button" class="btn" onclick="search.value='National Geographic'"><img src="asset/nationalgeo.jpg" alt="National Geographic"></button>
+                    <button type="button" class="btn" onclick="search.value='Warner Bros'"><img src="asset/Warner Bros.jpg" alt="warnerbros"></button>
+                    <button type="button" class="btn" onclick="search.value='DreamWorks'"><img src="asset/𝘋𝘳𝘦𝘢𝘮𝘞𝘰𝘳𝘬𝘴.jpg" alt="𝘋𝘳𝘦𝘢𝘮𝘞𝘰𝘳𝘬𝘴"></button>
+                    <button type="button" class="btn" onclick="search.value='Legendary'"><img src="asset/Legendary.jpg" alt="legendary"></button>
+                    <button type="button" class="btn" onclick="search.value='MGM'"><img src="asset/MGM.jpg" alt="MGM"></button>
+                    <button type="button" class="btn" onclick="search.value='Universal'"><img src="asset/Universal.jpg" alt="universal"></button>
+                    <button type="button" class="btn" onclick="search.value='Luca'"><img src="asset/Luca.jpg" alt="Luca"></button>
+        </div>
+    </body>
+</html>

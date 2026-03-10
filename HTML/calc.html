@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body align="center">
+        <table id="calc" border="1" align="center">
+            <tr>
+                <td colspan="3">
+                    <input type="text" id="result" value="0" disabled>
+                </td>
+                <td><input type="reset" value="C" onclick="clr()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="disp('1')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="2" onclick="disp('2')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="3" onclick="disp('3')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="+" onclick="disp('+')" onkeydown="myfun(event)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="disp('4')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="5" onclick="disp('5')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="6" onclick="disp('6')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="-" onclick="disp('-')" onkeydown="myfun(event)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="disp('7')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="8" onclick="disp('8')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="9" onclick="disp('9')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="*" onclick="disp('*')" onkeydown="myfun(event)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" onclick="disp('0')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="." onclick="disp('.')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="=" onclick="disp('=')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="/" onclick="disp('/')" onkeydown="myfun(event)"></td>
+            </tr>
+        </table>
+    </body>
+</html>

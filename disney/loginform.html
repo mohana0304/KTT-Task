@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=0.1">
+        <title>Login Form</title>
+        <style>
+            body,html{
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: black;
+                color: white;
+            }
+            .form-container{
+                padding: 30PX;
+                border: none;
+                box-shadow: 0 5px 15px rgba(227, 190, 88, 0.74);
+                width: fit-content
+                
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="form-container"> 
+            <h4 style="color:#eddf85;display:block;">Login Form</h4>
+            <form autocomplete="on">
+                <label for="name">Name: </label>
+                <input id="name" type="text" name="name">
+                <br><br>
+                <label for="age">Age: </label>
+                <input id="age" type="number" name="age" min="18" max="100"><br><br>
+                <label for="mail">Email ID: </label>
+                <input id="mail" type="email" name="mail"><br><br>
+                <label for="password">Password: </label>
+                <input id="password" type="password" name="password"><br><br>
+                <fieldset style="width: fit-content;padding:5px;">
+                    <legend>Language: </legend>
+                    <input type="checkbox" id="tamil" name="lang" value="tamil">
+                    <label for="tamil">Tamil</label><br>
+                    <input type="checkbox" id="english" name="lang" value="english">
+                    <label for="english">English</label><br>
+                    <input type="checkbox" id="hindi" name="lang" value="hindi">
+                    <label for="hindi">Hindi</label><br>
+                    <input type="checkbox" id="telugu" name="lang"  value="telugu">
+                    <label for="telugu">Telugu</label><br>
+                    <input type="checkbox" id="malayalam" name="lang" value="malayalam">
+                    <label for="malayalam">Malayalam</label><br>
+                </fieldset><br>
+                <input type="submit" value="Submit" onclick="alert('Login successfully')" style="background-color: #eddf85; color:black; border:none;border-radius:5px;  padding: 8px 16px;
+            border-radius: 20px;">
+            </form>
+        </div>
+    </body>
+</html>
