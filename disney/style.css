@@ -19,7 +19,7 @@
                 justify-content: flex-start;
                 padding: 10px 20px;
                 background-color: rgb(0, 0, 0);
-                gap: 40px;
+                gap: 100px;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -29,7 +29,7 @@
             
             nav {
                 display: flex;
-                gap: 40px;
+                gap: 70px;
             }
             
             nav a {

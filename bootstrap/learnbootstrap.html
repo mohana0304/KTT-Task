@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bootstrap Site</title>
+    <!--CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .custom-border {
+    border: 2px solid #151515;
+}
+.btton{
+    background-color: blueviolet;
+}
+
+    </style>
+</head>
+
+    <!--javascript-->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <!--Icons-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" >Bootstrap</a>
+       
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainnav">
+            <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    <form class="d-flex ms-auto">
+            <input class="form-control " type="search" placeholder="search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+        <div class="nav-item dropdown  d-flex ms-auto">
+    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" >service</a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item"  href="#">Web design</a></li>
+        <li><a class="dropdown-item"  href="#">app developement</a></li>
+        <li><hr class="dropdown-divider"  href="#"></li>
+        <li><a  class="dropdown-item"  href="#">consulting</a></li>
+    </ul>
+    
+    
+</div>
+</nav>
+
+    <h1>Hello, Bootstrap!</h1>
+    <button class="btn btn-primary">Click Me</button><br><br>
+
+<h5>Icons</h5>
+   <i class="bi bi-house-fill"></i>           
+<i class="bi bi-star-fill"></i>        
+<i class="bi bi-facebook"></i>         
+<i class="bi bi-twitter-x"></i>
+<br><br>
+<h5>Grid </h5>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col">Extra small</div>
+        <div class="col">col-</div>
+        <div class="col">&lt;576px</div>
+        <div class="col">Phones portrait</div>
+    </div>
+
+    <div class="row">
+        <div class="col">Small</div>
+        <div class="col">col-sm-</div>
+        <div class="col">&GreaterEqual;576px</div>
+        <div class="col">Phones landscape</div>
+    </div>
+
+    <div class="row">
+        <div class="col">Medium</div>
+        <div class="col">col-md-</div>
+        <div class="col">&GreaterEqual;768px</div>
+        <div class="col">Tablets</div>
+    </div>
+
+    <div class="row">
+        <div class="col">Large</div>
+        <div class="col">col-lg-</div>
+        <div class="col">&GreaterEqual;992px</div>
+        <div class="col">Desktops</div>
+    </div>
+
+    <div class="row">
+        <div class="col">Extra Large</div>
+        <div class="col">col-xl-</div>
+        <div class="col">&GreaterEqual;1200px</div>
+        <div class="col">Large desktops</div>
+    </div>
+
+    <div class="row">
+        <div class="col">XXL</div>
+        <div class="col">col-xxl-</div>
+        <div class="col">&GreaterEqual;1400px</div>
+        <div class="col">Extra large screens</div>
+    </div>
+
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-8 custom-border">8 column in 2/3 width</div>
+        <div class="col-4 custom-border">4 column in 1/3 width</div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+            Responsive column 1
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            Responsive column 2
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            Responsive column 3
+        </div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col order-3">first in html,visible 3</div>
+        <div class="col order-1">second in html,visible 1</div>
+        <div class="col order-2">third in html,visible 2</div>
+    </div>
+</div>
+<br><br>
+
+<button class="btn btn-primary btton">Primarycolor</button>
+<button class="btn btn-secondary">Secondary</button>
+<button class="btn btn-success">Success</button>
+<button class="btn btn-danger">Danger</button>
+<button class="btn btn-warning">Warning</button>
+<button class="btn btn-info">Info</button>
+<button class="btn btn-light">Light</button>
+<button class="btn btn-dark">Dark</button>
+<button class="btn btn-link">Link</button>
+<!--primary btn mark large or small-->
+<button class="btn btn-primary btn-lg">Large button</button>
+<button class="btn btn-primary">Normal button</button>
+<button class="btn btn-primary btn-sm">Small button</button>
+<br>
+<br>
+<button class="btn btn-outline-primary">Outline Primary</button>
+<button class="btn btn-outline-danger">Outline Danger</button>
+
+<br><br>
+<!--primary button with width 100%-->
+<button class="btn btn-primary w-100">Full width button</button>
+<br><br>
+<button class="btn btn-primary" disabled>Disabled button</button>
+<!--primary button with icon -->
+<button class="btn btn-primary">
+    <i class="bi bi-download"></i> Download
+</button>
+<br>
+<!--Card-->
+<div class="card" style="width:13rem">
+    <img src="disney\asset\download.jpg" class="card-img-top" >
+    <div class="card-body">
+        <h5 class="card-title">Ratatouille</h5>
+        <p class="card-text  text-muted">If you focus on what you left behind you will never see what lies ahead!</p>
+        <button class="btn btn-primary">Watch Now</button>
+    </div>
+</div>
+<br><br>
+
+<div class="card mb-3" style="max-width: 530px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="disney\asset\download.jpg" class="card-img-top" >
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+        <h5 class="card-title">Ratatouille</h5>
+        <p class="card-text  text-muted">If you focus on what you left behind you will never see what lies ahead!</p>
+        <button class="btn btn-primary">Watch Now</button>
+    </div>
+        </div>
+    </div>
+</div>
+
+<br><br>
+<form >
+    <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter mail">
+        <div id="emailhelp" class="form-text">We'll not share your maill</div>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="password">
+    </div>
+    <div class="mb-3 form-check">
+        <input  type="checkbox" class="form-check-input" id="remember">
+        <label for="remember" class="form-check-label">Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br><hr>
+<br>
+<form class="row g-3"> 
+    <div class="col-md-6">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter mail">
+    </div>
+    <div class="col-md-6">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="password">
+    </div>
+    <div class="col-md-12">
+        <label for="address" class="form-label">Address:</label>
+        <input type="text" class="form-control" id="address">
+    </div>
+    <div class="col-md-6">
+        <label for="city" class="form-label">City:</label>
+        <input type="text" class="form-control" id="city">
+    </div>
+    <div class="col-md-4">
+        <label for="state" class="form-label">State:</label>
+        <select id="state" class="form-select">
+            <option selected>TamilNadu</option>
+            <option>Kerala</option>
+            <option>Rajasthan</option>
+            <option>Maharashtra</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label for="zip" class="form-label">Pincode</label>
+        <input type="text" class="form-control" id="Zip">
+    </div>
+    <div class="mb-3 form-check">
+        <input  type="checkbox" class="form-check-input" id="remember">
+        <label for="remember" class="form-check-label">check me</label>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+</form>
+<br><hr><br>
+<form class="row g-3 need-validation">
+    <div class="col-md-4">
+        <label for="first" class="form-label">First Name:</label>
+        <input type="text" id="first" class="form-control" value="John">
+        <div class="valid-feedback">
+            Look Good!
+        </div>
+        </div>
+        <div class="col-md-4">
+            <label for="last" class="form-label">Last Name:</label>
+            <input type="text" id="last" class="form-control" value="Doe">
+            <div class="valid-feedback">
+                Look Good!
+            </div>
+        </div>
+    <div class="col-md-4">
+        <label for="user" class="form-label">User Name:</label>
+        <input type="text" id="user" class="form-control" >
+        <div class="invalid-feedback">
+            Please choose a username
+        </div>
+    </div>
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+<br><hr><br>
+<label for="vol" class="form-label">Volume:</label>
+<input id="vol" class="form-range" type="range">
+<br>
+<div class="col-md-4">
+    <label for="file" class="form-label">Upload file:</label>
+    <input class="form-control" type="file" id="file">
+</div>
+<br>
+<div class="input-group md-4">
+    <span class="input-group-text">@</span>
+    <input type="text"  class="form-control" placeholder="username">
+</div> 
+<br>
+<div class="input-group md-4">
+    <input type="text" class="form-control" placeholder="Amount">
+    <span class="input-group-text">.00</span>
+</div><br>
+<div class="alert alert-primary" role="alert">
+    This is a primary alert—check it out!
+</div>
+<div class="alert alert-success" role="alert">
+    <strong>Success!</strong> Your action was completed.
+</div>
+<div class="alert alert-danger" role="alert">
+    <strong>Error!</strong>Something went wrong.
+</div>
+<div class="alert alert-warning" role="alert">
+    <strong> Warning!</strong> your settings.
+</div>
+<div class="alert alert-success d-flex" role="alert">
+    <i class="bi bi-check-circle-fill me-2"></i>
+    Successfully saved!
+</div>
+<div class="alert alert-warning alert-dismissible " role="alert">
+     You should check in on some of those fields below.
+     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+<div class="alert alert-success" role="alert">
+    <h3 class="alert-header">Well done!</h3>
+    <p>Aww yeah, you successfully read this important alert message.</p>
+    <p>Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div>
+<br>
+<button class="btn btn-primary position-relative">
+    Index
+    <span class="position-absolute bg-danger top-0 start-100 translate-middle  badge rounded-pill">99+<span class="visually-hidden">Unread message</span>
+    </span>
+</button>
+<br>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#home">Home</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile">Profile</button>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane active" id="home">Home content</div>
+    <div class="tab-pane" id="profile">Profile content</div>
+</div>
+
+
+<br><br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <h3 class="text-success ">Bootstrap Breadcrumb</h3>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="https://www.geeksforgeeks.org/">geeksforgeeks</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="https://www.w3schools.com/">w3schools</a>
+                    </li><li class="breadcrumb-item">
+                        <a href="#">HTML tutorial</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">CSS tutorial</a>
+                    </li><li class="breadcrumb-item">
+                        <a href="#">Bootstrap</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Javascript</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container mt-3" style="text-align: center;">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-bs-target="#demo" data-slide-to="0" active>
+            </li><li data-bs-target="#demo" data-slide-to="1" >
+            </li><li data-bs-target="#demo" data-slide-to="2">
+            </li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-9.png">
+            </div>
+            <div class="carousel-caption">
+                <h4 class="text-warning">Image1</h4>
+            </div>
+            <div class="carousel-item ">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-9.png">
+            </div>
+            <div class="carousel-caption">
+                <h4 class="text-warning">Image2</h4>
+            </div>
+            <div class="carousel-item ">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-9.png">
+            </div>
+            <div class="carousel-caption">
+                <h4 class="text-warning">Image3</h4>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
