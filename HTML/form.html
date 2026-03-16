@@ -5,7 +5,7 @@
     </head>
     <body>
         <div>
-            <form autocomplete="on">
+            <form autocomplete="off">
                 <label for="name">Name: </label>
                 <input id="name" type="text" name="name" placeholder="Enter your name"><br><br>
                 <label for="mail">Email: </label>
@@ -14,15 +14,18 @@
     <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
     <label for="birthday">DOB: </label>
     <input type="date" id="birthday" name="birthday" placeholder="Enter your birthday" required><br><br>
-    <label for="age">Age:</label><br>
-    <input type="number" min="18" max="100" required><br>
+    <label for="age" >Age:</label><br>
+    <input type="number" min="18" max="60" oninput="if(this.value > 60) this.value=60" required><br>
     <div style="display: flex; gap: 5px;">
-    <fieldset style="width: fit-content;padding:5px;">
+    <fieldset style="width: fit-content;padding:5px;" >
+
+        
+
         <legend>Gender:</legend>
         <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label><br>
+        <label  for="male">Male</label>
         <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label><br>
+        <label for="female">Female</label>
                 <input type="radio" id="other" name="gender" value="other">
         <label for="other">Other</label>
     </fieldset>
@@ -44,10 +47,17 @@
     <br>
     <label for="state">State:</label>
 <select id="state" name="state">
-<option value="TamilNadu">TamilNadu</option>
+
+<optgroup label="Group1">
+    <option value="TamilNadu">TamilNadu</option>
 <option value="Maharashtra">Maharashtra</option>
 <option value="Rajasthan">Rajasthan</option>
+</optgroup>
+<optgroup label="group2">
 <option value="Kerala">Kerala</option>
+<option value="Goa">Goa</option>
+</optgroup>
+
 </select>
 <br><br>
 <label for="Message">Message:</label><br>
@@ -55,7 +65,7 @@
 </textarea>
 <br><br>
     <label for="file">Upload Resume: </label>
-    <input type="file" id="file" name="file">
+    <input type="file"  id="file" name="file" accept=".jpeg,.png"  >
     <br><br>
 
 
