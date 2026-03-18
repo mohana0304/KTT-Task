@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head><Title>HTML Table </Title></head>
+    <body>
+        <table border="1" frame="void">
+            <tr>
+                <th>Name</th>
+                <th>MailID</th>
+                <th>Phone</th>
+            </tr>
+            <tr>
+                <td>Anu</td>
+                <td>Anu123@gmail.com</td>
+                <td>9879086798</td>
+            </tr>
+            <tr>
+                <td>Priya</td>
+                <td>priya6879@gmail.com</td>
+                <td>89679059776</td>
+            </tr>
+            <tr>
+                <td>Kavi</td>
+                <td>kavi896@gmail.com</td>
+                <td>90798876779</td>
+            </tr>
+        </table>
+        <br><br>
+        <div style="display: flex; gap:5px ">
+            <table rules="rows">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Anu</td>
+                <td>22</td>
+            </tr>
+        </table>
+        <table rules="cols">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Anu</td>
+                <td>22</td>
+            </tr>
+        </table>
+        <table rules="all">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Anu</td>
+                <td>22</td>
+            </tr>
+        </table>
+        </div>
+        <div>
+            <table>
+                
+            </table><br><br>
+        </div>
+        <table border="1">
+                <tbody><tr>
+                    <th rowspan="3">Day</th>
+                    <th colspan="3">Seminar</th>
+                </tr> 
+    <tr>
+        <th colspan="2">Schedule</th>
+        <th rowspan="2">Topic</th>
+         </tr>
+    <tr>
+        <th>Begin</th><th>End</th>
+    </tr>
+    <tr>
+
+        <td rowspan="2">Monday</td>
+        <td rowspan="2">8:00 am</td>
+        <td rowspan="2">5.00pm</td>
+        <td>Introduction to XML</td>
+        </tr><tr>
+        <td>Validity: DTD and Relax NG</td>
+                    </tr>
+           
+   
+    <tr>
+        <td rowspan="3">Tuesday</td>
+        <td>8.00 am</td><td>11:00 am</td>
+        <td colspan="1.5">XPath</td>
+            </tr>
+    <tr>
+        <td>11:00 am</td><td>2.00 pm</td></tr>
+    <tr>
+       
+        <td>2:00 pm</td><td>5:00 pm</td> <td colspan="1.5">XSL Transformation</td>
+    </tr>
+
+<tr>
+    <td>Wednesday</td>
+    <td>8:00 am</td><td>12:00 pm</td>
+    <td>XSL Formatting Objects</td>
+</tr>
+                
+            </tbody></table><br><br>
+            
+    <table border="1" align="center">
+            <caption style="color: darkgreen;">Time Table</caption>
+            <tr>
+                <th>Day</th>
+                <th>8:30 - 9:30</th><th>9:30 - 10:30</th><th>10:30 - 11:30</th><th>11:30 - 12:30</th>
+                <th>12:30 - 2:00</th><th>2:00 - 3:00</th><th>3:00 - 4:00</th><th>4:00 - 5:00</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td></td>
+                <td>sub1</td><td>sub2</td><td>sub3</td>
+                <td rowspan="6">L<br>U<br>N<br>C<br>H</td>
+                <td>sub4</td><td>sub5</td><td><b>COUNSELLING CLASS</b></td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>sub1</td><td>sub2</td><td>sub3</td><td></td>
+                <td>sub4</td><td>sub5</td><td>LIBRARY</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>sub1</td><td>sub2</td><td>sub3</td><td></td>
+                <td colspan="3"><b>LAB</b></td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>sub1</td><td>sub2</td><td>sub3</td><td></td>
+                <td>sub4</td><td>sub5</td><td>LIBRARY</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>sub1</td><td>sub2</td><td>sub3</td><td></td>
+                <td>sub4</td><td>sub5</td><td>LIBRARY</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>sub1</td>
+                <td colspan="3"><b>SEMINAR</b></td>
+                <td>sub4</td><td>sub5</td><td>LIBRARY</td>
+            </tr>
+        </table>
+    </body>
+</html>

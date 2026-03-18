@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+    <head><title>HTML TABLES</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align:center; 
+            width: 100%;
+        }
+        .tab tr:nth-child(even) {
+            background-color: rgb(164, 186, 205);}
+        h3{
+            text-align: center;
+            color: rgb(43, 18, 13); 
+            padding:10px; 
+            margin-top:auto;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+            padding: 10px;
+        }
+
+        body{
+            font-family: 'Segoe UI';
+            align-items: center;
+          
+        }
+        .page-title {
+             text-align: center;
+            background: rgb(248, 233, 214);
+            padding: 8px 20px;
+            border: 1px solid black;
+            border-radius: 6px;
+            width: 100%;
+        }
+        .table-response{
+            overflow-x: auto;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <h3 class="page-title">Complete HTML Table Features</h3>
+        <div class="container">
+            <div style="background-color: rgb(217, 226, 233);">
+                <h3 style="background-color: rgb(118, 169, 215);">Basic Table</h3>
+                <table  rules="cols" frame="box">
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                    <tr>
+                        <td>John</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>Sara</td>
+                        <td>30</td>
+                    </tr>
+                </table>
+            </div>            
+            <div style="background-color: rgb(244, 232, 243);">
+                <h3 style="background-color: rgb(233, 177, 233);">Header (&lt;th&gt;)</h3>
+                <table  rules="all">
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                    </tr>
+                    <tr>
+                        <td>Laptop</td>
+                        <td>$800</td>
+                        <td>In Stock</td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>$500</td>
+                        <td>Out </td>
+                    </tr>
+                </table>
+            </div>            <div style="background-color: rgb(243, 237, 228);">
+                <h3 style="background-color: rgb(217, 183, 116);">Table Sections</h3>
+                <table border="1" >
+                    <thead>
+                        <tr>
+                            <th colspan="4">New Employees Records</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th>Name</th>
+                        <th colspan="2">Jobs</th>
+                        <th>Working Experience</th>
+                        </tr>
+                        <tr>
+                            <td>John</td>
+                            <td>software Engineer</td>
+                            <td>Data Analyst</td>
+                            <td rowspan="2">5 Years</td>
+                        </tr>
+                        <tr>
+                            <td>Ale</td>
+                            <td colspan="2">Senior Web Developer</td>
+                        </tr>
+                        <tr>
+                            <td>Jack</td>
+                            <td>Junior Tech Writer</td>
+                            <td>Blogger</td>
+                            <td>6 Months</td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+            </div>
+            <div style="background-color: rgb(229, 239, 226);">
+                <h3 style="background-color: rgb(162, 203, 160);">Rowspan and Colspan</h3>
+                <table border="1" >
+                <tbody><tr>
+                    <th rowspan="3">Day</th>
+                    <th colspan="3">Seminar</th>
+                </tr> 
+    <tr>
+        <th colspan="2">Schedule</th>
+        <th rowspan="2">Topic</th>
+         </tr>
+    <tr>
+        <th>Begin</th><th>End</th>
+    </tr>
+    <tr>
+
+        <td rowspan="2">Monday</td>
+        <td rowspan="2">8:00 am</td>
+        <td rowspan="2">5.00pm</td>
+        <td>Introduction to XML</td>
+        </tr><tr>
+        <td>Validity: DTD and Relax NG</td>
+                    </tr>
+           
+   
+    <tr>
+        <td rowspan="4">Tuesday</td>
+        <td>8.00 am</td><td>11:00 am</td>
+        <td rowspan="2">XPath</td>
+            </tr>
+    <tr>
+        <td>11:00 am</td><td>1.00 pm</td>
+    </tr>
+    <tr>
+       <td>1:00 am</td><td>1.00 pm</td><td rowspan="2">XSL Transformation</td>
+    </tr><tr>
+        <td>2:00 pm</td><td>5:00 pm</td>
+    </tr>
+  
+
+<tr>
+    <td>Wednesday</td>
+    <td>8:00 am</td><td>12:00 pm</td>
+    <td>XSL Formatting Objects</td>
+</tr>
+                
+            </tbody></table><br><br>
+            </div>
+            <div style="background-color: rgb(234, 245, 237);">
+                <h3 style="background-color: rgb(160, 225, 187);">Caption</h3>
+                <table border="1" align="center" >
+            <caption style="color: darkgreen;">Time Table</caption>
+            <tr>
+                <th>Day</th>
+                <th>8:30 - 9:30</th><th>9:30 - 10:30</th><th>10:30 - 11:30</th><th>11:30 - 12:30</th>
+                <th>12:30 - 2:00</th><th>2:00 - 3:00</th><th>3:00 - 4:00</th><th>4:00 - 5:00</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td></td>
+                <td>sub1</td><td>sub2</td><td>sub3</td>
+                <td rowspan="6">L<br>U<br>N<br>C<br>H</td>
+                <td>sub4</td><td>sub5</td><td><b>COUNSELLING CLASS</b></td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>sub1</td><td>sub2</td><td>sub3</td><td></td>
+                <td>sub4</td><td>sub5</td><td>LIBRARY</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>sub1</td><td>sub2</td><td>sub3</td><td></td>
+                <td colspan="3"><b>LAB</b></td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>sub1</td><td>sub2</td><td>sub3</td><td></td>
+                <td>sub4</td><td>sub5</td><td>LIBRARY</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>sub1</td><td>sub2</td><td>sub3</td><td></td>
+                <td>sub4</td><td>sub5</td><td>LIBRARY</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>sub1</td>
+                <td colspan="3"><b>SEMINAR</b></td>
+                <td>sub4</td><td>sub5</td><td>LIBRARY</td>
+            </tr>
+        </table>
+            </div>
+            <div style="background-color: rgb(226, 228, 241);">
+                <h3 style="background-color: rgb(199, 174, 239);">Styled Table</h3>
+            <table class="tab">
+                <tr>
+                    <th>id</th>
+                    <th>First_name</th>
+                    <th>last_name</th>
+                    <th>gender</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Arun</td><td>Kumar</td><td>Male</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Anitha</td><td>Varun</td><td>Female</td>
+                </tr>
+                <tr>
+                    <td>3</td><td>Rahul</td><td>Sharma</td><td>male</td>
+                </tr>
+                <tr>
+                    <td>4</td><td>Neha</td><td>Singh</td><td>Female</td>
+                </tr>
+                <tr>
+                    <td>5</td><td>Rohit</td><td>Reddy</td><td>male</td>
+                </tr>
+            </table>
+            </div>
+            <div >
+                <h3>ColGroup</h3>
+                <table border="1">
+                    <colgroup>
+                        <col span="1" style="background-color: rgb(153, 162, 171);">
+                        <col span="1" style="background-color: rgb(233, 224, 123);">
+                        <col span="1" style="background-color: rgb(77, 232, 209);">
+                    </colgroup>
+                    <tr>
+                        <th>City</th><th>Country</th><th>Continent</th>
+                    </tr>
+                    <tr>
+                        <td>New York</td><td>United States</td><td>North America</td>
+                    </tr>
+                    <tr>
+                        <td>London</td><td>United Kingdom</td><td>Europe</td>
+                    </tr>
+                    <tr>
+                        <td>Tokyo</td><td>Japan</td><td>Asia</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="background-color: rgb(240, 237, 229);" class="table-response">
+                <h3 style="background-color: rgb(232, 189, 143); width:150%;">Responsive Table</h3>
+    <table style="width:150%;" rules="all" cellpadding="5px" cellspacing="2px">
+        <tr>
+        <th>S.No</th>
+        <th>Product</th>
+        <th>Name</th>
+        <th>Owner</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Brand</th>
+        <th>Quantity</th>
+        <th>Rating</th>
+        <th>Purchase Date</th>
+        <th>Location</th>
+        <th>Status</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>Handbag</td>
+        <td>Rakhi Gupta</td>
+        <td>₹1500</td>
+        <td>Fashion</td>
+        <td>Gucci</td>
+        <td>2</td>
+        <td>4.5</td>
+        <td>12-01-2024</td>
+        <td>Delhi</td>
+        <td>Available</td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Camera</td>
+        <td>Anjali Gupta</td>
+        <td>₹25000</td>
+        <td>Electronics</td>
+        <td>Canon</td>
+        <td>1</td>
+        <td>4.7</td>
+        <td>05-03-2024</td>
+        <td>Mumbai</td>
+        <td>Out of Stock</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>Laptop</td>
+        <td>Vejata</td>
+        <td>₹55000</td>
+        <td>Electronics</td>
+        <td>HP</td>
+        <td>3</td>
+        <td>4.6</td>
+        <td>18-02-2024</td>
+        <td>Bangalore</td>
+        <td>Available</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>Iphone</td>
+        <td>Adarsh</td>
+        <td>₹80000</td>
+        <td>Mobile</td>
+        <td>Apple</td>
+        <td>1</td>
+        <td>4.8</td>
+        <td>25-12-2023</td>
+        <td>Chennai</td>
+        <td>Available</td>
+    </tr>
+    </table>
+</div>
+<div style="background-color: rgb(240, 231, 233);">
+            <h3 style="background-color: rgb(241, 213, 218);">Accessible Table</h3>
+            <table border="1">
+                <tr>
+                    <th scope="col">Purchase</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Evaluation</th>
+                    <th scope="col">Cost</th>
+                </tr>
+                <tr>
+                    <th scope="row">Haircut</th>
+                    <td>Hairdresser</td>
+                    <td>12/09</td>
+                    <td>Great idea</td><td>30</td>
+                </tr>
+                <tr>
+                    <th scope="row">Lasagna</th>
+                    <td>Restaurant</td>
+                    <td>12/09</td><td>Regrets</td><td>18</td>
+                </tr>
+                <tr>
+                    <th scope="row">Shoes</th>
+                    <td>Shoe shop</td><td>13/09</td><td>Big regrets</td><td>65</td>
+                </tr>
+                <tfoot><th colspan="4"> SUM</th><td>118</td></tfoot>
+            </table>
+        </div>
+        </div><br><br>
+        
+        <table border="1" >
+            <tbody><tr>
+                <th rowspan="2">sr.No</th>
+                <th rowspan="2">Details of the services provided</th>
+                <th rowspan="2">Qty</th>
+                <th colspan="2">Service Period</th>
+                <th colspan="4">Service Performance Details</th>
+            </tr>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>S.No</th>
+                <th>Service ID No:</th>
+                <th>Gap in Service (in days)</th>
+                <th>Overall Performance Remarks (Satisfactory/unsatisfactory)</th>
+            </tr>
+            <tr>
+                <td rowspan="3">1</td>
+                <td rowspan="3"></td>
+                <td></td><td></td><td></td><td>1</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td>2</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td>3</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td rowspan="2">1</td>
+                <td rowspan="2"></td>
+                <td></td><td></td><td></td><td>1</td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td></td><td></td><td></td><td>2</td><td></td><td></td><td></td>
+            </tr>
+        </tbody></table>
+          
+            
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms</title>
+</head>
+<body>
+    
+<fieldset>
+        <legend>User Registration From</legend>
+    <form>
+               <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name."><br><br>
+    <label for="user">Username:</label>
+    <input type="text" id="user" name="user" maxlength="18" minlength="3" required=""><br><br>
+        <label for="mail">Mail:</label>
+        <input type="email" id="mail" name="mail" placeholder="Enter Your MailID." required=""><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" pattern="[A-Za-z0-9]{8}" oninput="checkpass()"  required=""><br><br>
+    <label for="confirm">Confirm Password:</label>
+    <input type="password" id="confirm" name="confirm" oninput="checkpass()" required=""><br>
+    <p id="msg"></p><br>
+    <label for="age">Age:</label>
+    <input type="number" min="18" max="60" oninput="if(this.value>60)" this.value="60"><br>
+    <label for="profile">Profile Image</label>
+    <input type="file" name="profile" id="profile" accept=".jpeg,.png" required=""><br>
+<br>    <input type="checkbox" id="agree" required="">
+   <label for="agree"> I agree,the given details are true.</label><br>
+    
+<button type="submit">Submit</button>
+    </form>
+ 
+    </fieldset>
+<fieldset>
+    <legend>Job Application Form</legend>
+    <form>
+        <label for="fristname">First Name:</label>
+        <input type="text" id="firstname" name="firstname">
+        <label for="last">LastName</label>
+        <input type="text" id="last" name="last"><br><br>
+         <label for="mail">Mail:</label>
+        <input type="email" id="mail" name="mail" placeholder="Enter Your MailID." required=""><br><br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890"><br><br>
+        <label for="position">Position Applying For:</label>
+        <select id="position" name="position">
+            <optgroup label="Technical">
+                <option value="Developer">Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Testing">Testing</option>
+            </optgroup>
+            <optgroup label="Non-Technical">
+                <option value="Sales">Sales Executive</option>
+                <option value="manager">Manager</option>
+            </optgroup>
+        </select><br><br>
+        <label for="experience" >Year of experience:</label><br>
+        <input type="range" id="experience" min="0" max="20" oninput="rangevalue.innerText=this.value">
+        <label id="rangevalue"></label><br>
+        <label for="upload">Resume Upload:</label>
+        <input type="file" accept=".pdf,.text,.doc" required><br><br>
+        <label for="cover">Cover letter:</label><br>
+        <textarea id="cover" row="50" col="20"></textarea><br>
+        <label for="portfolio">Portfolio URL:</label>
+        <input type="url" id="portfolio" size="30">
+        <label for="available">Available Date:</label>
+        <input type="date" id="available" name="available">
+        <label for="skill">Skill:</label>
+        <select id="skill" name="skill" multiple>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JS</option>
+            <option value="Python">Python</option>
+        </select><br>
+        <label for="about">How did you hear about us?</label>
+        <input type="radio" id="linkedin" name="about" value="LinkedIn">
+        <label for="linkedin">linkedin</label>
+        <input type="radio" id="Indeed" name="about" value="Indeed">
+        <label for="Indeed">Indeed</label>
+        <input type="radio" id="Friend" name="about" value="Friend">
+        <label for="Friend">Friend</label>
+        <input type="radio" id="other" name="about" value="Other">
+        <label for="other">other</label>
+    </form>
+</fieldset>
+
+</body>
+<script>
+        let p=document.getElementById('password');
+        let c=document.getElementById('confirm');
+        let msg=document.getElementById('msg');
+        function checkpass(){
+            if(p.value === c.value){
+                msg.style.color="green";
+                msg.textContent='password match';
+            }
+            else{
+                msg.style.color="red";
+                msg.textContent='password mismatch';
+            }
+        }
+    </script>
+</html>
