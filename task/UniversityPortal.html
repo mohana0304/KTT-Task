@@ -1,49 +1,523 @@
 <!DOCTYPE html>
 <html>
-    <head><title>University portal</title></head>
+    <head><title>University portal</title>
+        <style>
+            body{
+                min-height: 100vh;
+    margin: 0;
+                background-image: url('kec.jpg');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            justify-content: center;
+            align-items: center;
+            }
+                    .container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+            padding: 10px;
+        }
+            form{
+                width: 460px;
+                background-color: #06060660;
+    backdrop-filter: blur(1px);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+            }
+        </style>
+            </head>
     <body>
         <h3 style="text-align: center; color:rgb(99, 165, 167)">University Admission Appication Portal</h3>
-        <fieldset>
-            <legend>Personal Information</legend>
-            <form>
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter Full name.."><br>
-                <label for="DOB">Date od birth:</label>
-                <input type="date" id="DOB" name="DOB" ><br><br>
-                <label for="gender">Gender:</label>
-               <input type="radio" id="male" name="gender" value="Male">
+        <div class="container">
+<form >
+            <fieldset style="width: 430px;">
+        <legend>Personal Information</legend>
+        
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter full name"  required>
+        <br><br>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" min="1980-01-01" max="2008-12-31" required>
+        <br><br>
+        
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male" required>
         <label for="male">Male</label>
-        <input type="radio" id="Female" name="gender" value="Female">
-        <label for="Female">Female</label>
-        <input type="radio" id="Other" name="gender" value="other">
-        <label for="other">Other</label><br><br>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="Other">
+        <label for="other">Other</label>
+        <br><br>
+        
         <label for="nationality">Nationality:</label>
-        <select id="nationality" name="nationality">
-            <option value="Eroupe">Eroupe</option>
-            <option value="China">China</option>
-            <option value="Indonesia">Indonesia</option>
-            <option value="Pakistan">Pakistan</option>
-            <option value="Japan">Japan</option>
+        <select id="nationality" name="nationality" required>
+            <option value="">Select nationality</option>
             <option value="India">India</option>
-        </select><br><br>
-        <label for="Idproof">ID Proof:</label>
-        <input type="text" id="Idproof" name="Idproof" title="Aadhar/PAN/Passport Number"><br>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="Other">Other</option>
+        </select>
+        <br><br>
+        
+        <label for="idproof">Identity Proof Number:</label>
+        <input type="text" id="idproof" name="idproof" placeholder="Aadhar/PAN/Passport number" 
+               pattern="[A-Za-z0-9]{10,16}" title="10-16 alphanumeric characters"  required>
+        <br><br>
+        
         <label for="blood">Blood Group:</label>
-        <datalist id="blood">
-            <option value="O+"></option>
-            <option value="O-"></option>
-            <option value="A+"></option>
-            <option value="B+"></option>
+        <input type="text" id="blood" name="blood" list="bloodgroup" placeholder="Select blood group">
+        <datalist id="bloodgroup">
+            <option value="A+">
+            <option value="A-">
+            <option value="B+">
+            <option value="B-">
+            <option value="O+">
+            <option value="O-">
+            <option value="AB+">
+            <option value="AB-">
         </datalist>
         <br><br>
-        <label for="category">Category</label>
-        <section id="category" name="category">
+        
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="">Select category</option>
             <option value="General">General</option>
             <option value="OBC">OBC</option>
             <option value="SC">SC</option>
             <option value="ST">ST</option>
-        </section><br><br>
-            </form>
-        </fieldset>
+        </select>
+        <br><br>
+            </fieldset>
+        </form>
+           <form>
+             <fieldset style="width: 430px;">
+        <legend>Contact Details</legend>
+            <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        <br><br>
+        
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="9876543210" 
+               title="10-digit mobile number" required>
+        <br><br>
+        
+        <label for="altmobile">Alternate Mobile (optional):</label>
+        <input type="tel" id="altmobile" name="altmobile" pattern="[0-9]{10}" placeholder="9876543210">
+        <br><br>
+        
+        <label for="address">Current Address:</label>
+        <textarea id="address" name="address" rows="3" cols="40" placeholder="Enter full address" required></textarea>
+        <br><br>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" placeholder="Enter city" required>
+        <br><br>
+        
+        <label for="state">State:</label>
+        <select id="state" name="state" required>
+            <option value="">Select state</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Gujarat">Gujarat</option>
+        </select>
+        <br><br>
+        
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" placeholder="400001" required>
+        <br><br>
+        
+        <input type="checkbox" id="sameaddress" name="sameaddress">
+        <label for="sameaddress">Permanent address same as current address</label>
+        <br><br>
+            </fieldset>
+        </form>
+        
+
+    
+    
+        <form>
+            <fieldset style="width: 430px;">
+        <legend>Academic Details</legend>
+            <label for="qualifying">Qualifying Examination:</label>
+        <select id="qualifying" name="qualifying" required>
+            <option value="">Select exam</option>
+            <option value="10th">10th Standard</option>
+            <option value="12th">12th Standard</option>
+            <option value="diploma">Diploma</option>
+            <option value="graduation">Graduation</option>
+        </select>
+        <br><br>
+        
+        <label for="board">Board/University Name:</label>
+        <input type="text" id="board" name="board" placeholder="Enter board/university name" required>
+        <br><br>
+        
+        <label for="school">School/College Name:</label>
+        <input type="text" id="school" name="school" placeholder="Enter institution name" required>
+        <br><br>
+        
+        <label for="passyear">Year of Passing:</label>
+        <input type="number" id="passyear" name="passyear" min="2000" max="2025" step="1"  oninput="if(this.value > 2025) this.value=2025" required>
+        <br><br>
+        
+        <label for="rollno">Roll Number:</label>
+        <input type="text" id="rollno" name="rollno" placeholder="Enter roll number" required>
+        <br><br>
+        
+        <label for="marks">Marks Obtained:</label>
+        <input type="number" id="marks" name="marks" min="0" max="1000" required>
+        <br><br>
+        
+        <label for="maxmarks">Maximum Marks:</label>
+        <input type="number" id="maxmarks" name="maxmarks" min="1" max="1000" required>
+        <br><br>
+        
+        <label for="percentage">Percentage (%):</label>
+        <input type="number" id="percentage" name="percentage" min="0" max="100" step="0.01" readonly>
+        <br><br>
+        
+        <label>Subjects Studied:</label><br>
+        <input type="checkbox" id="maths" name="subjects" value="Maths">
+        <label for="maths">Mathematics</label><br>
+        <input type="checkbox" id="physics" name="subjects" value="Physics">
+        <label for="physics">Physics</label><br>
+        <input type="checkbox" id="chemistry" name="subjects" value="Chemistry">
+        <label for="chemistry">Chemistry</label><br>
+        <input type="checkbox" id="biology" name="subjects" value="Biology">
+        <label for="biology">Biology</label><br>
+        <input type="checkbox" id="computer" name="subjects" value="Computer">
+        <label for="computer">Computer Science</label><br>
+        <br>
+        
+        <label for="gap">Gap in Education:</label>
+        <select id="gap" name="gap">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+        <br><br>
+        
+        <label for="gapreason">If yes, reason for gap:</label>
+        <textarea id="gapreason" name="gapreason" rows="2" cols="30"></textarea>
+        <br><br>
+        
+        <label for="attempts">Number of Attempts:</label>
+        <input type="number" id="attempts" name="attempts" min="1" max="10" value="1">
+        <br><br>
+           </fieldset>
+
+        </form>
+        
+ 
+    
+        <form>
+            <fieldset style="width: 430px;">
+        <legend>Course Selection</legend>
+        <label for="program">Select Program:</label>
+        <select id="program" name="program" required>
+            <option value="">Select program</option>
+            <option value="engineering">Engineering (B.E./B.Tech)</option>
+            <option value="medical">Medical (MBBS)</option>
+            <option value="arts">Arts (BA)</option>
+            <option value="commerce">Commerce (B.Com)</option>
+            <option value="science">Science (B.Sc)</option>
+        </select>
+        <br><br>
+        
+        <label for="branch">Select Branch:</label>
+        <select id="branch" name="branch" required>
+            <option value="">Select branch</option>
+            <optgroup label="Engineering">
+                <option value="cs">Computer Science</option>
+                <option value="it">Information Technology</option>
+                <option value="mech">Mechanical</option>
+                <option value="civil">Civil</option>
+                <option value="elec">Electrical</option>
+            </optgroup>
+            <optgroup label="Medical">
+                <option value="mbbs">MBBS</option>
+                <option value="bds">BDS</option>
+                <option value="pharma">Pharmacy</option>
+                <option value="nursing">Nursing</option>
+            </optgroup>
+        </select>
+        <br><br>
+        
+        <label>Admission Type:</label><br>
+        <input type="radio" id="regular" name="admissiontype" value="Regular" required>
+        <label for="regular">Regular</label><br>
+        <input type="radio" id="management" name="admissiontype" value="Management">
+        <label for="management">Management Quota</label><br>
+        <input type="radio" id="nri" name="admissiontype" value="NRI">
+        <label for="nri">NRI Quota</label><br>
+        <input type="radio" id="sports" name="admissiontype" value="Sports">
+        <label for="sports">Sports Quota</label><br>
+        <br>
+        
+        <label for="pref1">First Preference Course:</label>
+        <input type="text" id="pref1" name="pref1" placeholder="Enter course name" required>
+        <br><br>
+        
+        <label for="pref2">Second Preference Course:</label>
+        <input type="text" id="pref2" name="pref2" placeholder="Enter course name">
+        <br><br>
+        
+        <label for="pref3">Third Preference Course:</label>
+        <input type="text" id="pref3" name="pref3" placeholder="Enter course name">
+        <br><br>
+        
+        <label for="hostel">Hostel Required:</label>
+        <select id="hostel" name="hostel">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+        <br><br>
+        
+        <label for="transport">Transportation Required:</label>
+        <select id="transport" name="transport">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+        <br><br>
+          </fieldset>
+        </form>
+
+  
+    
+   
+        <form>
+             <fieldset style="width: 430px;">
+        <legend>Entrance Exam Details</legend>
+        <label for="entrance">Entrance Exam Taken:</label>
+        <select id="entrance" name="entrance" required>
+            <option value="">Select exam</option>
+            <option value="jee">JEE Main</option>
+            <option value="neet">NEET</option>
+            <option value="cet">CET</option>
+            <option value="university">University Exam</option>
+            <option value="none">None</option>
+        </select>
+        <br><br>
+        
+        <label for="entranceroll">Entrance Roll Number:</label>
+        <input type="text" id="entranceroll" name="entranceroll" placeholder="Enter roll number">
+        <br><br>
+        
+        <label for="examdate">Exam Date:</label>
+        <input type="date" id="examdate" name="examdate">
+        <br><br>
+        
+        <label for="score">Score/Rank Obtained:</label>
+        <input type="number" id="score" name="score" min="0" max="500">
+        <br><br>
+        
+        <label for="percentile">Percentile:</label>
+        <input type="range" id="percentile" name="percentile" min="0" max="100" value="50">
+        <output for="percentile">50</output>
+        <br><br>
+        
+        <label for="air">All India Rank:</label>
+        <input type="number" id="air" name="air" min="1" max="500000">
+        <br><br>
+        
+        <label for="categoryrank">Category Rank:</label>
+        <input type="number" id="categoryrank" name="categoryrank" min="1" max="200000">
+        <br><br>
+           </fieldset>
+        </form>
+
+ 
+    
+    
+        <form  enctype="multipart/form-data">
+            <fieldset style="width: 430px;">
+        <legend>Document Uploads</legend>
+        <label for="photo">Photograph (JPEG/PNG):</label>
+        <input type="file" id="photo" name="photo" accept=".jpeg,.jpg,.png" required multiple>
+        <br><br>
+        
+        <label for="signature">Signature (JPEG/PNG):</label>
+        <input type="file" id="signature" name="signature" accept=".jpeg,.jpg,.png" required>
+        <br><br>
+        
+        <label for="marksheet10">10th Marksheet (PDF/Image):</label>
+        <input type="file" id="marksheet10" name="marksheet10" accept=".pdf,.jpeg,.jpg,.png" required>
+        <br><br>
+        
+        <label for="marksheet12">12th Marksheet (PDF/Image):</label>
+        <input type="file" id="marksheet12" name="marksheet12" accept=".pdf,.jpeg,.jpg,.png" required>
+        <br><br>
+        
+        <label for="tc">Transfer Certificate (PDF):</label>
+        <input type="file" id="tc" name="tc" accept=".pdf" required>
+        <br><br>
+        
+        <label for="migration">Migration Certificate (PDF):</label>
+        <input type="file" id="migration" name="migration" accept=".pdf">
+        <br><br>
+        
+        <label for="caste">Caste Certificate (if applicable, PDF):</label>
+        <input type="file" id="caste" name="caste" accept=".pdf">
+        <br><br>
+        
+        <label for="income">Income Certificate (if applicable, PDF):</label>
+        <input type="file" id="income" name="income" accept=".pdf">
+        <br><br>
+        
+        <label for="disability">Disability Certificate (if applicable, PDF):</label>
+        <input type="file" id="disability" name="disability" accept=".pdf">
+        <br><br>
+        
+        <label for="sports">Sports Certificates (Multiple files, PDF):</label>
+        <input type="file" id="sports" name="sports" accept=".pdf" multiple>
+        <br><br>
+           </fieldset>
+        </form>
+
+ 
+    
+   
+        <form>
+             <fieldset style="width: 430px;">
+        <legend>Parent/Guardian Details</legend>
+                   <label for="fathername">Father's Name:</label>
+        <input type="text" id="fathername" name="fathername" placeholder="Enter father's name" required>
+        <br><br>
+        
+        <label for="foccupation">Father's Occupation:</label>
+        <input type="text" id="foccupation" name="foccupation" placeholder="Enter occupation" required>
+        <br><br>
+        
+        <label for="fmobile">Father's Mobile Number:</label>
+        <input type="tel" id="fmobile" name="fmobile" pattern="[0-9]{10}" placeholder="9876543210" required>
+        <br><br>
+        
+        <label for="femail">Father's Email:</label>
+        <input type="email" id="femail" name="femail" placeholder="father@email.com" required>
+        <br><br>
+        
+        <label for="mothername">Mother's Name:</label>
+        <input type="text" id="mothername" name="mothername" placeholder="Enter mother's name" required>
+        <br><br>
+        
+        <label for="moccupation">Mother's Occupation:</label>
+        <input type="text" id="moccupation" name="moccupation" placeholder="Enter occupation" required>
+        <br><br>
+        
+        <label for="mmobile">Mother's Mobile Number:</label>
+        <input type="tel" id="mmobile" name="mmobile" pattern="[0-9]{10}" placeholder="9876543210" required>
+        <br><br>
+        
+        <label for="income">Annual Family Income (₹):</label>
+        <input type="number" id="income" name="income" min="0" max="10000000" step="1000" required>
+        <br><br>
+        
+        <label for="guardian">Guardian Name (if different):</label>
+        <input type="text" id="guardian" name="guardian" placeholder="Enter guardian name">
+        <br><br>
+        
+        <label for="relation">Relationship with Guardian:</label>
+        <input type="text" id="relation" name="relation" placeholder="Enter relationship">
+        <br><br>
+        
+        <label for="gcontact">Guardian Contact Number:</label>
+        <input type="tel" id="gcontact" name="gcontact" pattern="[0-9]{10}" placeholder="9876543210">
+        <br><br>
+            </fieldset>
+        </form>
+ 
+
+    
+  
+
+        <form>
+                <fieldset style="width: 430px;">
+        <legend>Payment Details</legend>
+                    <label for="fee">Application Fee (₹):</label>
+        <input type="text" id="fee" name="fee" value="1000" readonly>
+        <br><br>
+        
+        <label>Payment Mode:</label><br>
+        <input type="radio" id="credit" name="paymentmode" value="Credit Card" required>
+        <label for="credit">Credit Card</label><br>
+        <input type="radio" id="debit" name="paymentmode" value="Debit Card">
+        <label for="debit">Debit Card</label><br>
+        <input type="radio" id="netbanking" name="paymentmode" value="Net Banking">
+        <label for="netbanking">Net Banking</label><br>
+        <input type="radio" id="upi" name="paymentmode" value="UPI">
+        <label for="upi">UPI</label><br>
+        <br>
+        
+        <label for="cardname">Cardholder Name:</label>
+        <input type="text" id="cardname" name="cardname" placeholder="Enter name on card">
+        <br><br>
+        
+        <label for="cardnumber">Card Number:</label>
+        <input type="text" id="cardnumber" name="cardnumber" pattern="[0-9]{16}" placeholder="1234567890123456" maxlength="19">
+        <br><br>
+        
+        <label for="cardexpiry">Expiry Date (MM/YY):</label>
+        <input type="text" id="cardexpiry" name="cardexpiry"  placeholder="MM/YY">
+        <br><br>
+        
+        <label for="cvv">CVV:</label>
+        <input type="password" id="cvv" name="cvv" pattern="[0-9]{3,4}" placeholder="123" maxlength="4" onblur="this.readOnly=true">
+        <br><br>
+        
+        <label for="upiid">UPI ID:</label>
+        <input type="text" id="upiid" name="upiid" placeholder="username@bank">
+        <br><br>
+        
+        <input type="hidden" id="paymentstatus" name="paymentstatus" value="Pending">
+          </fieldset>
+        </form>
+
+  
+    
+    
+        <form>
+            <fieldset style="width: 430px;">
+        <legend>Declaration and Submission</legend>
+                    <input type="checkbox" id="declare" name="declare" required>
+        <label for="declare">I hereby declare that all information provided is true and correct</label>
+        <br><br>
+        
+        <label for="place">Place:</label>
+        <input type="text" id="place" name="place" placeholder="Enter place" required>
+        <br><br>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" value="2026-03-21" readonly>
+        <br><br>
+
+        <input type="checkbox" id="draft" name="draft">
+        <label for="draft">Save as draft</label>
+        <br><br>
+        
+        <input type="checkbox" id="smsupdate" name="smsupdate" checked>
+        <label for="smsupdate">Receive SMS updates</label>
+        <br><br>
+        
+        <input type="checkbox" id="emailupdate" name="emailupdate" checked>
+        <label for="emailupdate">Receive email notifications</label>
+        <br><br>
+        
+        <button type="submit">Submit Application</button>
+        <button type="reset">Reset Form</button>
+           </fieldset>
+        </form>
+
+
+        </div>
+        
+ 
     </body>
 </html>

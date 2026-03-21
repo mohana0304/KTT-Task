@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML forms Task</title>
+        <!--Icons-->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .frame-grid{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+            padding: 10px;
+        }
+        .p-title {
+            font-weight: bold;
+            margin: 0;
+        }
+        .p-detail{
+            padding-left: 10px;
+        }
+        .p-desc {
+            color: #666;
+            font-size: 13px;
+            margin: 3px 0;
+        }
+        .left{
+            padding: 20px;
+            flex: 1;
+        }
+        .right {
+            width: 350px;
+            background: #3482cb;
+            padding: 25px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        h2,h3{
+            text-align: center;
+            padding: 30px;
+        }
+            body{
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+            }
+            .container{
+                margin: 10px;
+                display: flex;
+                gap: 0;
+                width: 700px;
+                border-radius: 10px;
+                border: 1px solid #666; 
+            }
+            th{
+                color: rgb(122, 126, 128);
+                text-align: left;
+                padding-bottom: 15px;
+            }
+            td{
+                padding: 10px ;
+                border-bottom: 1px;
+            }       
+       .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        
+        }
+        .form-group input,select{
+                width: 100%;
+                background-color: #6d9fcea8;
+                border: none;
+                padding: 7px;
+                color: white;
+        }
+        .btn{
+            width: 100%;
+            padding: 12px;
+            background-color:#4bc57ef9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: auto;
+        }
+        .icon{
+            font-size: 24px; 
+            color: #666; 
+            cursor: pointer;
+        }
+        .tx{
+            width: 100%; padding: 12px;
+             margin-bottom: 15px;
+             border: 1px solid #ddd; 
+             border-radius: 5px;
+             font-size: 14px;
+        }
+        .btn2{
+            background-color: #799350; 
+            color: white; 
+            border: none; 
+            padding: 12px 40px; 
+            border-radius: 25px; 
+            font-weight: bold; 
+            cursor: pointer;
+        }
+        .clip{
+            background-color: #5c7a30; 
+            padding: 40px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center; 
+            color: white;
+            clip-path: ellipse(95% 90% at 100% 50%);
+        }.line-input {
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  font-size: 16px;
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; 
+}
+.field-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.line-input:focus {
+  outline: none;
+  border-bottom-color: #000;
+}
+        </style>
+    </head>
+    <body >
+        <h2 style="color: rgb(243, 158, 47);">Different Styles for Forms</h2>
+    <div class="frame-grid">
+
+
+<div class="container">
+            <div class="left">
+            <table style="border-collapse: collapse;">
+                <tr>
+                    <th colspan="3" style="text-align: center;">Order Summary</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="p-detail">
+                        <div class="p-title">Nike</div>
+                        <div class="p-desc">Free Run 3.0 Women</div>
+                        <div class="p-desc">color:Grey/Orange Size:10.5</div>
+                    </td>
+                    <td style="text-align:right; font-weight:bold;">$99.95</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="p-detail">
+                        <div class="p-title">Nike</div>
+                        <div class="p-desc">Free Run 3.0 Women</div>
+                        <div class="p-desc">color:Grey/Orange Size:10.5</div>
+                    </td>
+                    <td style="text-align:right; font-weight:bold;">$99.95</td>
+                </tr>
+                                <tr>
+                    <td></td>
+                    <td class="p-detail">
+                        <div class="p-title">Nike</div>
+                        <div class="p-desc">Free Run 3.0 Women</div>
+                        <div class="p-desc">color:Grey/Orange Size:10.5</div>
+                    </td>
+                    <td style="text-align:right; font-weight:bold;">$99.95</td>
+                </tr>
+                <tr>
+                    <td>VAT 19%</td>
+                    <td></td><td style="text-align:right; font-weight:bold;">$68.75</td>
+                </tr>
+                <tr><td>Delivery</td><td></td><td style="text-align:right; font-weight:bold;">$4.95</td></tr>
+                <tfoot>
+                    <td style="font-size: medium; font-weight:bold;">TOTAL</td><td></td><td style="text-align:right; font-weight:bold;">$435.55</td>
+                </tfoot>
+            </table>
+            </div>
+
+            <div class="right">
+                <form>
+                    <div class="form-group" style="display: flex; gap:110px;">
+                        <label for="card">Please selct your card: </label>
+                    <select id="card" name="card" style="padding: 3px; width:20%;">
+                        <option value="visa" selected>Visa</option>
+                        <option value="master">Mastercard</option>
+                    </select>
+                    </div>
+                   <div style="margin: 15px 0;justify-content:center;display:flex;">
+            <img src="https://logodownload.org/wp-content/uploads/2016/10/visa-logo-1.png" 
+                 alt="VISA" 
+                 style="height: 35px; width: auto;  opacity: 0.9; ">
+        </div>
+                    <div class="form-group">
+                        <label for="number">Card Number</label>
+                    <input type="text" id="number" name="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="Holder">Card Holder</label>
+                    <input type="text" id="Holder" name="Holder">
+                    </div>
+                    <div style="display: flex; gap:10px;">
+                        <div class="form-group">
+                    <label for="expires">Expires</label><br>
+                    <input type="date" id="expires" name="expires">
+                        </div>
+                        <div class="form-group">
+                     <label for="cvc">CVC</label><br>
+                    <input type="text" id="cvc" name="cvc" size="20"><br>
+                        </div>
+                    </div>
+                     <div style="flex-grow: 1;"></div>
+                    <button type="button" class="btn">Checkout</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="container" >
+            <div style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvwv3vGwcw2FYoKpLzOUsI6UQRtkbjl6wkIg&s);height:260px;width:250px;">
+            </div>
+                <div align="center">
+        <h3 style="margin-bottom: 10px;">Talk to Us</h3>
+        <form style="margin-left: 100px;">
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Name</label>
+                <input type="text" style="background-color: #bebcbc; width: 280px; padding: 8px; border: 1px solid #999; border-radius: 4px;">
+            </div>
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">E-mail</label>
+                <input type="text" style="background-color: #bebcbc; width: 280px; padding: 8px; border: 1px solid #999; border-radius: 4px;">
+            </div>
+            <div style="margin-bottom: 20px; text-align: left;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Message</label>
+                <textarea style="background-color: #bebcbc; width: 280px; padding: 8px; border: 1px solid #999; border-radius: 4px; height: 100px;"></textarea>
+            </div>
+            <button type="button" style="padding: 7px 25px; border: none; border-radius: 10px; background: #f0bc12; cursor: pointer; font-weight: bold;">Send message</button>
+        </form>
+    </div>
+        </div>
+
+        <div class="container" style="background-color: black;color:white;">
+            <form style="margin-left: 10px ; width:100%; margin-right:10px; margin-top:20px;margin-bottom:10px">
+                <h4>Name</h4>
+                <div style="display: flex; gap:20px;">
+                    <div class="form-group">
+                    <input type="text" id="name" name="name" size="50" >
+                    <label size="4">First</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" size="50">
+                    <label size="4">Last</label>
+                </div>
+                </div>
+                <h4>Email</h4>
+                <div class="form-group">
+
+                    <input type="email">
+                </div>
+                <h4>Company Name</h4>
+                <div class="form-group"><input type="text"></div>
+                <h4>Company Address</h4>
+                <div class="form-group">
+                    <input type="text">
+                    <label>Street Address</label>
+                </div>
+                <div class="form-group">
+                    <input type="text">
+                    <label>Address Line 2</label>
+                </div>
+                <div style="display: flex; gap:20px;">
+                    <div class="form-group">
+                    <input type="text" size="50">
+                    <label>City</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" size="50">
+                    <label>State/Region/Province</label>
+                </div>
+                </div>
+                <div style="display: flex; gap:20px;">
+                    <div class="form-group">
+                    <input type="text" size="50">
+                    <label>Postal/Zip code</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" size="50">
+                    <label>Country</label>
+                </div>
+              
+                </div>
+
+<div style="text-align: center;">
+    <button type="submit" style="padding: 7px 25px; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; background-color: #ef8050; color: white;">Submit</button>
+</div>
+        </div>
+<div class="container">
+    
+    <div style="text-align: center;">
+<h3>Register With</h3>
+
+    <div style="display: flex; gap: 15px; margin-bottom: 30px;justify-content: center;">
+        <i class="bi bi-facebook" class="icon"></i> 
+        <i class="bi bi-github" class="icon"></i> 
+        <i class="bi bi-linkedin" class="icon"></i> 
+        <i class="bi bi-instagram" class="icon"></i> 
+    </div>
+    <form>
+        <input type="text" placeholder="Name" class="tx">
+        <input type="email" placeholder="Email" class="tx">
+        <input type="password" placeholder="Password" class="tx">
+        <div style="text-align: center;margin-top: 20px;">
+            <button type="submit" class="btn2">SIGN UP</button>
+        </div>
+    </form>
+    </div>
+        
+    
+    <div class="clip">
+        <h2 style="font-size: 32px; margin-bottom: 20px;">Welcome Back!</h2>
+        <pre>Provide your personal details to use all 
+                            features
+                        
+                        </pre>
+        <div style="text-align: center; background-color:#5c7a30;border:1px white">
+            <button type="button" class="btn2">SIGN IN</button>
+        </div>
+    </div>
+
+</div>
+
+<div style="width: 700px;border-radius: 10px;border: 1px solid #666;">
+<h2 style="padding: 20px;">Application Form</h2>
+<div style="background-color: rgb(225, 235, 244);">
+    <h3 style="background-color: #3f5f7d;color:white;padding:10px;text-align:start;">A.General Customers</h3>
+    <form style="margin-right:10px;margin-left:10px;">
+  <div class="field-group">
+    <label for="name">Name</label>
+    <input type="text" class="line-input" id="name">
+  </div>
+    
+<br>
+<div class="form-row">
+    <div class="field-group">
+    <label for="dob">BirthDate</label>
+    <input type="date" class="line-input" id="dob">
+  </div>
+    <div class="field-group">
+        <label for="gender">Gender</label>
+        <input type="checkbox" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+    </div>    
+    <div class="field-group">
+        <input type="checkbox" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+    </div>
+</div><br>
+    <div class="field-group">
+        <label for="Address">Address</label>
+        <input type="text" id="Address" class="line-input">
+    </div>
+    <div class="form-row">
+        <div class="field-group">
+            <label>Phone Number</label>
+            <input type="tel" class="line-input">
+        </div>
+        <div class="field-group">
+            <label>Email Address</label>
+            <input type="email" class="line-input">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="field-group">
+            <label>ID Number</label>
+            <input type="text" class="line-input">
+        </div>
+        <div class="field-group">
+            <label>Social Security Number</label>
+            <input type="text" class="line-input">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="field-group">
+            <label>Status</label>
+            <input type="checkbox" id="single" value="single">
+        <label for="single">Single</label>
+        </div>
+        <div class="field-group">
+            <input type="checkbox" id="married" value="married">
+        <label for="married">Married</label>
+        </div>
+        <div class="field-group">
+            <input type="checkbox" id="other" value="other">
+        <label for="other">Other</label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="field-group">
+            <label>Occupation</label>
+            <input type="text">
+        </div>
+        <div class="field-group">
+            <label>Are you a retiree?</label>
+              <input type="checkbox" id="yes" value="yes">
+        <label for="yes">Yes</label>
+        </div>
+        <div class="field-group">
+            <input type="checkbox" id="no" value="no">
+        <label for="no">No</label>
+        </div>
+    </div>
+     
+     
+    </form>
+    
+</div>
+
+<h3 style="background-color: #3f5f7d;color:white;padding:10px;text-align:start;">B.Type of Health Coverage</h3>
+<div style="display: flex; border:1px">
+    
+</div>
+</div>
+
+
+    </div>
+        
+    </body>
+</html>
