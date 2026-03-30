@@ -2,9 +2,53 @@
 <html>
     <head>
         <title>Calculator</title>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                font-family: Arial;
+            }
+            #calc {
+            background: #747171;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        #result {
+            width: 90%;
+            height: 50px;
+            font-size: 22px;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="button"], input[type="reset"] {
+            width: 60px;
+            height: 50px;
+            font-size: 18px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #444;
+            color: white;
+            transition: 0.2s;
+        }
+
+        input[type="button"]:hover,
+        input[type="reset"]:hover {
+            background: #898888;
+        }
+        </style>
     </head>
-    <body align="center">
-        <table id="calc" border="1" align="center">
+    <body >
+        <table id="calc"  align="center" >
             <tr>
                 <td colspan="3">
                     <input type="text" id="result" value="0" disabled>
@@ -15,26 +59,76 @@
                 <td><input type="button" value="1" onclick="disp('1')" onkeydown="myfun(event)"></td>
                 <td><input type="button" value="2" onclick="disp('2')" onkeydown="myfun(event)"></td>
                 <td><input type="button" value="3" onclick="disp('3')" onkeydown="myfun(event)"></td>
-                <td><input type="button" value="+" onclick="disp('+')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="+"  onclick="disp('+')" onkeydown="myfun(event)"></td>
             </tr>
             <tr>
                 <td><input type="button" value="4" onclick="disp('4')" onkeydown="myfun(event)"></td>
                 <td><input type="button" value="5" onclick="disp('5')" onkeydown="myfun(event)"></td>
                 <td><input type="button" value="6" onclick="disp('6')" onkeydown="myfun(event)"></td>
-                <td><input type="button" value="-" onclick="disp('-')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="-"  onclick="disp('-')" onkeydown="myfun(event)"></td>
             </tr>
             <tr>
                 <td><input type="button" value="7" onclick="disp('7')" onkeydown="myfun(event)"></td>
                 <td><input type="button" value="8" onclick="disp('8')" onkeydown="myfun(event)"></td>
                 <td><input type="button" value="9" onclick="disp('9')" onkeydown="myfun(event)"></td>
-                <td><input type="button" value="*" onclick="disp('*')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="*"  onclick="disp('*')" onkeydown="myfun(event)"></td>
             </tr>
             <tr>
                 <td><input type="button" value="0" onclick="disp('0')" onkeydown="myfun(event)"></td>
                 <td><input type="button" value="." onclick="disp('.')" onkeydown="myfun(event)"></td>
-                <td><input type="button" value="=" onclick="disp('=')" onkeydown="myfun(event)"></td>
-                <td><input type="button" value="/" onclick="disp('/')" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="="  onclick="calculate()" onkeydown="myfun(event)"></td>
+                <td><input type="button" value="/"  onclick="disp('/')" onkeydown="myfun(event)"></td>
             </tr>
         </table>
+        <script>
+            let result = document.getElementById("result");
+
+            let n1="";
+            let n2="";
+            let op="";
+
+            function disp(val) {
+                if(val=="+"||val=="-"||val=="*"||val=="/"){
+                    op=val;
+                }
+                else{
+                    if(op === ""){
+                        n1+=val;
+                        result.value=n1;
+                    }
+                    else{
+                        n2+=val;
+                        result.value=n2;
+                    }
+                }
+            }
+            function clr() {
+                n1="";
+                n2="";
+                op="";
+                result.value = "0";
+            }
+            function calculate() {
+                try {
+                    let a = Number(n1);
+                    let b = Number(n2);
+                    let ans = 0;
+                    if (op === "+") ans = a + b;
+                    if (op === "-") ans = a - b;
+                    if (op === "*") ans = a * b;
+                    if (op === "/") ans = a / b;
+                    result.value = ans;
+                    n1 = ans.toString();
+                    n2 = "";
+                    op = "";
+
+                } catch {
+                    result.value = "Error";
+                }
+            }     
+            function myfun(event) {
+                console.log(event.key);
+            }
+        </script>
     </body>
 </html>
