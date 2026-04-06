@@ -1,370 +1,4 @@
-"use strict";
-
-/*//undefined variable
-function myfun(){
-  x=10; // No error - creates a global variable x
-}
-myfun();
-console.log(x);
-
-//Duplicate Parameter Names
-function sum(a, a, c) {  // No error
-    return a + a + c;
-}
-console.log(sum(5, 10, 15));
-
-//this Behavior in Functions
-function showThis() {
-    console.log(this);  // Outputs: Window (global object)
-}
-showThis();
-let public = 10;   
-let private = 20;   
-let static = 30;
-console.log(public);*/
-
-/* let m=10;
-    let str='Welcome';
-     let str1='Mohanapriya';
-  let n=`hi ${str1}`;
-    console.log(str);
-   console.log(n);
-    let a=10,b=300;
-    console.log( `the result is ${a + b}` );
-
-// You can create a constant array:
-const cars = ["Saab", "Volvo", "BMW"];
-
-// You can change an element:
-cars[0] = "Toyota";
-
-// You can add an element:
-cars.push("Audi");
-cars.pop();
-console.log(cars);
-let age = prompt('How old are you?', 100);
-
-alert(`You are ${age} years old!`);
-
-let ok=confirm('Are you sure?');
-alert(ok);
-
-
-let num="1243";
-console.log(`${num} ${typeof num}`);
-num=Number(num);
-console.log(typeof num);
-let con="Mohanapriya";
-console.log(`${con} ${typeof con}`);
-con=Number(con);
-console.log(`${con} ${typeof con}`);
-let st=9789;
-console.log(`${st} ${typeof st}`);
-st=String(st);
-console.log(typeof st);
-alert(Boolean("hello"));
-alert(Boolean(0));
-alert(Boolean(""));
-
-
-console.log(10-3);
-console.log(2**4);
-console.log(5%2);
-
-
-let s = "my" + "string";
-alert(s);
-alert( '1' + 2 ); 
-alert( 2 + '1'+4+6 );//2146(2+1+4+'6' ) 76
-
-a=(3+4,6+9,1+2)
-console.log(a);
-a=b=1;
-console.log(`a ` + ++a);
-console.log(b++);
-let x = 1 + (a *= 2);
-console.log(x);
-
-a =Number( prompt("First number?", 1));
-b = Number(prompt("Second number?", 2));
-
-alert(a + b); 
-
-let accessAllowed = age > 18 ? true : false;
-console.log(accessAllowed);
-age = 18;
-
-if (age >= 18) {
-  console.log("Adult");
-} else {
-  console.log("Minor");
-}
-
-
-let name = null;
-let user = name ?? "Guest";
-
-console.log(user); 
-
-let i = 1;
-
-while (i <= 3) {
-  console.log(i);
-  i++;
-}
-for (let i = 1; i <= 3; i++) {
-  console.log(i);
-}
-
- let day = 2;
-
-switch (day) {
-  case 1:
-    console.log("Monday");
-    break;
-  case 2:
-    console.log("Tuesday");
-    break;
-  default:
-    console.log("Other day");
-}
-
-
-function greet(name) {
-  return "Hello " + name;
-}
-
-console.log(greet("mona"));
-
-function ask(question,showOk,showCancel){
-  if(confirm(question)) showOk();
-  else showCancel();
-}
-
-function showOk(){
-  alert("you agreed.");
-}
-
-function showCancel(){
-  alert("you canceled the execution.");
-}
-
-ask("Do you agree?" ,showOk,showCancel);
-
-a=10,b=0;
-subtract(a,b);
-function subtract(a,b){
-  console.log(`subtraction of ${a} and ${b} is ${a-b} `)
-}
-
-let sum = function(a,b) {
-  return a + b;
-};
-
-console.log(sum);
-console.log(sum(a,b));
-
-console.log(x); // undefined
-
-var x = 10;
-//Groups related logs together
-console.group("User Info");
-
-console.log("Name: John");
-console.log("Age: 25");
-
-console.groupEnd();
-//Same as group, but collapsed by default
-console.groupCollapsed("Hidden Group");
-
-console.log("Hidden log");
-
-console.groupEnd();
-
-/*console.error('something wend wrong!');
-console.warn('this is a warning');
-console.info('this is info');*/
-//Displays data in table format
-/*let users = [
-  { name: "John", age: 25 },
-  { name: "Jane", age: 30 }
-];
-
-console.table(users);
-//Measure execution time
-console.time("Loop");
-
-for (let i = 0; i < 5; i++) {}
-
-console.timeEnd("Loop");
-//Counts how many times called
-console.count("Click");
-console.count("Click");
-
-
-function first() {
-  second();
-}
-
-function second() {
-  console.trace();//Shows function call stack
-}
-first();
-
-
-
-//Logs error only if condition is false
-console.assert(5 > 10, "5 is not greater than 10");
-
-//Displays javascript object as a tree
-console.dir(document);
-//Shows XML/HTML structure
-console.dirxml(document.body);
-
-//Arrow function-->A shorter way to write function expressions( let add = (a, b) => a + b;)
-let greet=()=> console.log("Hello");
-greet();
-debugger;
-let square=x=>x*x;
-console.log(`Square value of 4 `+square(4));
-let div=(i,j)=>i/j;
-console.log(div(50,3));
-
-
-let age=9;
-let Welcome= (age<18) ? (names)=>alert('hello '+names):(names)=>alert('greeting '+names);
-Welcome("john");
-
-//multiline Arrow Function
-
-let multiply=(i,j) =>{
-  let result=i*j;
-  console.log(result);
-}
-multiply(8,5);
-a=100,b=90;
-debugger;
-
-let total=(...number)=>{
-  let tot=0;
-  for(let n of number)
-    tot+=n;
-  return tot;
-}
-console.log(total(4,89,3,9,80,11));
-
-
-console.log(Math);
-
-let a1="1";
-let a2=0;
-switch(+a1){
-  case(a2+1):
-  console.log("switch");
-  break;
-  default:
-    console.log("default");
-    break;
-}
-console.log(a2);
-*/
-
-
-
-//Immediately Invoked Function Expression (IIFE)is a JavaScript function 
-// that runs immediately as soon as it is defined. You don't need to call it separately.
-
-(function() {
-    console.log("Runs immediately");
-})();
-
-(function(name){
-  console.log("Hello "+name);
-})("mona");
-
-(()=>{
-  console.log("Arrow IIFE")
-})
-
-//Generator function This function can pause and resume
-function* generateNumbers() {
-
-    yield 1;//pause here and send this value{ value :1,done:false}
-    yield 2;//done:flase more values coming, done:true generator finished
-    yield 3;
-}
-const gen = generateNumbers();
-console.log(gen.next().value);//next() for resume from pause
-console.log(gen.next().value); 
-console.log(gen.next().value);
-
-//Async function --> this function always return promise
-//await pauses the async function until the Promise resolves
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-async function makeCoffee() {
-    console.log("Starting coffee machine...");
-    await delay(2000);  // Wait 2 seconds
-    console.log("Coffee is ready!");
-}
-makeCoffee();
-//Constructor function is a blueprint/template for creating multiple similar objects. 
-// It's like a factory that produces objects with the same properties and methods.
-function Person(name, age) {
-    this.name = name;
-    this.age = age;
-}
-const person1 = new Person("John", 25);
-const person2 = new Person("Jane", 30);
-console.log(person1.name);  
-console.log(person2.name);  
-
-//method definition in objects
-const person = {
-    name: "John",
-    greet:()=>{  
-        console.log(`Hello, I'm ${this.name}`);
-    }
-};
-person.greet();
-
-//recusive function
-function fact(n){
-  if(n===0||n===1)
-    return 1;
-  return n*fact(n-1);
-}
-console.log(fact(6));
-
-//call back function
-function dosomething(callback){
-  console.log('doing work..');
-  callback();
-}
-function mycallback(){
-  console.log("callback executed!");
-}
-dosomething(mycallback);
-
-
-
-
-function logger(func){
-    return function(...args){
-        console.log("This time is mine");
-        return func(...args);
-    }
-}
-function add(a,b){
-    return a+b;
-}
-const loggerevent = logger(add);
-console.log(loggerevent(2,3));
-
-
-let student={
-  
+let student={  
   name:"Anu",
   "full name":"Anu Varsha",
   age:20,
@@ -401,6 +35,7 @@ console.log(student.age);
 
 let copy={...student};
 copy.name="Ammu";
+
 copy.address.city="erode";
 console.log(student.name);
 console.log(student.address.city);
@@ -685,7 +320,7 @@ console.log(flat);
 
 let arr3=['anu','varsha','arun','mega'];
 console.log(arr3.join(';'));
-console.log(isNaN("101"));
+
 
 for(let key in user){
   console.log(key,user[key]);
@@ -706,11 +341,75 @@ console.log(iterator.next());
 console.log(iterator.next());
 
 
-//Map(set,get,has,size,delet)
-let mymap=new Map();
-mymap.set("name","mona");
-mymap.set(1,101);
-mymap.set(true,"boolean value");
-mymap.set({id:1},"object key");
+//Destructor is unpack values from arrays or objects into separate variables
+let array=['john',23,101];
+const [names,age,rollno]=array;
+console.log(names);
+console.log(age);
+console.log(rollno);
 
-cons
+let c=["red","blue","green"];
+const [first,second]=c;
+console.log(first);
+console.log(second);
+
+const [first1, ,third]=c;
+console.log(first1);
+console.log(third);
+
+const [first2,second1,third1="pink"]=c;
+console.log(first2);
+console.log(second1);
+console.log(third1);
+
+let number=[1,8,9,0,3];
+const [n1,n2,...n3]=number;
+console.log(n1);
+console.log(n2);
+console.log(n3);
+
+
+
+const useres={
+  names:"john",
+  age:23,
+  rollno:101
+};
+
+const {names: username,age: userage}=useres;// Extract 'names' into variable 'username'
+
+console.log(username);
+console.log(userage);
+
+//Date and Time
+
+const now=new Date();
+
+console.log(now.getDate());
+console.log(now.getDay());
+console.log(now.getFullYear());
+console.log(now.getHours());
+console.log(now.getMinutes());
+
+console.log(now.toDateString());
+console.log(now.toISOString());
+console.log(now.toTimeString());
+
+console.log(now.toLocaleString());      
+console.log(now.toLocaleDateString());  
+console.log(now.toLocaleTimeString());
+
+const curr=new Date("2026-04-04T04:21:40.914Z");
+console.log(curr.toString());
+
+console.log(now.getHours()); //local hour     
+console.log(now.getUTCHours());//UTC hour
+
+console
+
+console.log(now.toLocaleDateString().replace(/\//g, '-'));  
+
+
+for (let i = 0; i < 3; i++){
+    console.log(i);
+}
