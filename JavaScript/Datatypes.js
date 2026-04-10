@@ -1,4 +1,8 @@
 
+//Math.random() * (max - min + 1) + min ----> in specific range
+
+
+
 let s = "text";          
 let n = 42;               
 let big = 9007199254740991n;

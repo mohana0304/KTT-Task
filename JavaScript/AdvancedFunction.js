@@ -3,6 +3,7 @@
 //function that itself is recusion
 function fib(n){
     if(n<=1) return n;
+    debugger;
     return fib(n-1)+fib(n-2);
 }
 
@@ -172,12 +173,12 @@ console.log(global.y);
 
 function greet() {//functions are behave like objects
   console.log("Hello");
+  console.log(greet.customProp);
 }
 
 greet.customProp = "I am a function property";
 
 greet();
-console.log(greet.customProp);
 
 //Named Function Expression (NFE) is a function expression that has a name inside it.
 
@@ -188,3 +189,190 @@ const factorial=function fact(n){
 
 //console.log(fact(5)); ReferenceError: fact is not defined
 console.log(factorial(5));
+
+
+//new Function is a constructor used to create a function from strings at runtime.
+
+let div = new Function('a', 'b', 'return a / b');
+console.log(div(10, 3)); 
+
+
+globalThis.Z=10;
+function test() {
+  let Z = 20;
+
+  let fn = new Function('console.log("it concept the global variable value first"); return Z');
+  return fn();
+}
+
+console.log(test()); 
+
+
+//scheduling 
+
+//setTimeout run this function after x milliseconds(Runs once after delay)
+
+setTimeout(()=>{
+    console.log("Hello run once after 2 second")
+},2000);
+
+
+//setInterval run this function every x milliseconds(Runs again and again after delay)
+
+let id=setInterval(()=>{
+    console.log("Repeating every 1 sec");
+},1000);
+setTimeout(()=>{
+    clearInterval(id);
+},3000);
+
+setTimeout(()=>console.log("hi"),1000);//Arrow function form
+
+function get(name){
+    console.log("hello "+name);
+}
+setTimeout(get,1000,"Deya");//passing arguments
+
+let id1=setTimeout(get.bind(null,"Saga"),4000);//same result in different form
+
+//clearTimeout(id1);
+
+
+
+
+
+//Decorator
+
+function original(name){
+    return `Hello ${name}`;
+}
+
+//we can add behaviour without change the original function
+function decorator(fn){
+    return function(name){
+        console.log("Before call");
+        const res=fn(name);
+        console.log(res);
+        console.log("After call");
+    };
+}
+original=decorator(original);
+original("mona");
+
+
+//forwarding, call/apply
+
+function orgin(name){
+    return `Hello ${name}`;
+}
+function decorate(fn){
+    return function(...args){//passing all arguments + this correctly to original function
+        console.log("Before");
+        const res=fn.apply(this,args);//call/apply are function with a specific this
+        console.log("After");
+        return res;
+    };
+}
+orgin=decorate(orgin);
+console.log(orgin("priya",24));
+
+
+let shop={
+    taxRate:0.18,
+    getPrice(basePrice,discount){
+        console.log("calculating....");
+        return (basePrice - discount)*(1+this.taxRate);
+    }
+};
+
+function cachingDecorator(func){
+    let cache=new Map();// to store results in map
+    return function(){
+        let key = [].join.call(arguments);//convert inputs into single strings key
+        if(cache.has(key)){
+            return cache.get(key);             
+        }
+        //forwarding - it pass the call to original function
+        let result =func.apply(this,arguments);//this call original function with same input arguments
+        cache.set(key,result);
+        return result;
+    };
+}
+
+//in apply pass only array , in call pass array or string
+
+shop.getPrice = cachingDecorator(shop.getPrice);
+
+console.log(shop.getPrice(2, 4));
+console.log(shop.getPrice(2, 4));
+
+
+//func(2,6); it calculated func(2,6) it calculated again to reduce that use map 
+// to store the calculate value if the input is already present without calculating it return the output
+
+
+//if funct(2,3) ---> arguments ={0:2,1:3,length:2}
+//call/apply are to control pass arguments  and forward a function call safely
+
+
+//function binding
+
+//when take function out of object it loses this 
+//let fn=user.sayHi; fn(); ---> this=undefined
+
+//for that use bind to fix this permanently
+
+
+let user={
+    name: 'mona',
+    greet(){
+        return `Welcome ${this.name}`;
+    }
+};
+
+let w=user.greet;
+console.log(w());//Welcome undefined
+
+let wel=user.greet.bind(user);//bind create a new function and fixes this=user
+console.log(wel());//Welcome mona
+
+setTimeout(user.greet.bind(user),1000);
+
+function multiply(a,b){
+    return a*b;
+}
+//a=2 is fixed ,b=5
+let double=multiply.bind(null,2);//the first argument is always for this so this=null
+console.log(double(5));
+
+
+
+//Arrow function revisited
+//arrow functions do not have this. If this is accessed, it is taken from the outside.
+let group={
+    title:"Our Group",
+    students:["saga","santhosh","sanjai"],
+    showlist(){
+        this.students.forEach(
+        /*    function(student){//title property is cannot read so undefined 
+                //because this is not accessed from the outside
+                console.log(this.title+':'+student);
+            }
+        */
+            student => console.log(this.title+':'+student)
+        );
+    }
+};
+
+group.showlist();
+
+const arrow=(fullName="Guest") => console.log("Hello "+fullName);
+arrow();
+
+arr=[10,89,57,38,29];
+const sumAll=(...nums)=>{
+    return nums.reduce((a,b)=>a+b,0);
+};
+console.log(sumAll(...arr));
+
+

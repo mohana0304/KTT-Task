@@ -62,9 +62,9 @@ let st=9789;
 console.log(`${st} ${typeof st}`);
 st=String(st);
 console.log(typeof st);
-alert(Boolean("hello"));
-alert(Boolean(0));
-alert(Boolean(""));
+// alert(Boolean("hello"));
+// alert(Boolean(0));
+// alert(Boolean(""));
 
 
 console.log(10-3);
@@ -73,9 +73,9 @@ console.log(5%2);
 
 
 let s = "my" + "string";
-alert(s);
-alert( '1' + 2 ); 
-alert( 2 + '1'+4+6 );//2146(2+1+4+'6' ) 76
+// alert(s);
+// alert( '1' + 2 ); 
+// alert( 2 + '1'+4+6 );//2146(2+1+4+'6' ) 76
 
 a=(3+4,6+9,1+2)
 console.log(a);
@@ -88,7 +88,7 @@ console.log(x);
 a =Number( prompt("First number?", 1));
 b = Number(prompt("Second number?", 2));
 
-alert(a + b); 
+// alert(a + b); 
 
 let accessAllowed = age > 18 ? true : false;
 console.log(accessAllowed);
@@ -142,11 +142,11 @@ function ask(question,showOk,showCancel){
 }
 
 function showOk(){
-  alert("you agreed.");
+  //alert("you agreed.");
 }
 
 function showCancel(){
-  alert("you canceled the execution.");
+  //alert("you canceled the execution.");
 }
 
 ask("Do you agree?" ,showOk,showCancel);
@@ -241,6 +241,7 @@ let multiply=(i,j) =>{
   let result=i*j;
   console.log(result);
 }
+
 multiply(8,5);
 a=100,b=90;
 debugger;

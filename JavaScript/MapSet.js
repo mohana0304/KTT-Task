@@ -195,3 +195,5 @@ weakmap1.set(weak, 'secret data');
 console.log(mymap.keys());
 console.log(mymap.values());
 console.log(mymap.entries());
+
+console.log(Object.fromEntries(mymap));
