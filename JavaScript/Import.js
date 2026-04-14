@@ -22,25 +22,3 @@ load();
 
 
 
-//DOM
-
-/*
-Selecting Elements --->getElementById("title")
-                       getElementByClassName("box")
-                       getElementByTagName("p")
-                       
-                       querySelector()- selects first matching element
-                       querySelectorAll("p")-selects all matching elements
-
-                       querySelector("h1").innerText="hello" - change visible text
-                       querySelector("div").innerHTML="<b>Bold</b>" -changes HTML inside element
-                       .textContent="New text" -gets/sets all text(even hidden)
-
-                       document.body.style.backgroundColor="yellow"
-
-                       document.createElement("div");
-
-                       document.body.appendchild(div);
-
-remove(),setAttribute("src","image.jpg"),getAttribute("href"),removeAttribute("disabled");
-*/

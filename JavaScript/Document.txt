@@ -1,0 +1,173 @@
+Browser Environment :
+
+   * when js is runs in the browser it provide extra object 
+     --> window,document,location,navigator,history 
+
+   * window is a global object 
+     --> inside window it has lots of methods and object (DOM,BOM,timer(Settimeout,setinterval),alert)
+        And also it provide Web API or Browser API (setTimeout,fetch,localstorage,document)
+
+   * document is HTML Page
+     -->use to control the page , when the content is change page updates instantly
+     -->document.body,document.title
+
+   * location (url info) current page url
+     -->location.href,location.reload()
+
+   * navigator (browser info)
+     -->navigator.userAgent - shows Broswer name,device info
+     -->navigator.onLine - true/false (internet)
+     -->navigator.language - en-US
+
+   * history (page History)
+     -->previously visited pages
+     -->history.back() - go to previous page
+     -->history.forward() - go forward
+     -->history.length -no of pages in history
+
+
+   * these allow js to -->talk to the DOM
+                            make network requests
+                            store data
+                            Handle timers
+
+JavaScript Engine (excute code)--->Browser API(features like DOM,fetch)
+--->Window Object(holds everything)-->document(your webpage)
+
+
+    DOM Tree--> browser converts HTML into a tree structure
+
+
+    HTML → becomes DOM tree
+        ↓
+    JavaScript uses document
+        ↓
+    You change / add / remove elements
+        ↓
+    Page updates instantly
+
+
+Walking the DOM --->moving between element
+
+                    el.parentElement
+                    el.children
+                    el.firstElementChild
+                    el.lastElementChild
+                    el.nextElementsibling
+                    el.previousElementSibling
+
+                    el.children//only elements
+                    el.childNodes //includes text nodes
+
+                    el.innerText // only visible text
+                    el.textContent // all text (even hidden)
+
+                    parent.append(child)//modern
+                    parent.prepend(child)//add at start
+                    parent.before(child)
+                    parent.after(child)
+
+
+
+DOM:
+
+Selecting Elements --->getElementById("title")
+                       getElementByClassName("box")
+                       getElementByTagName("p")
+                       
+                       querySelector()- selects first matching element
+                       querySelectorAll("p")-selects all matching elements
+
+                       querySelector("h1").innerText="hello" - change visible text
+                       querySelector("div").innerHTML="<b>Bold</b>" -changes HTML inside element
+                       .textContent="New text" -gets/sets all text(even hidden)
+
+                       document.body.style.backgroundColor="yellow"
+
+                       document.createElement("div");
+
+                       document.body.appendchild(div);
+
+remove(),setAttribute("src","image.jpg"),getAttribute("href"),removeAttribute("disabled");
+
+
+Node properties:
+
+In DOM everything is a node
+     -->eg: <div>"hello"</div>
+        <div>- element node
+        "hello"-text node
+
+    Node properties ---> nodeType
+                         nodeName
+                         nodeValue
+
+   * nodeType is just a number that tells what kind of node it is
+           --> 1= Element (HTML tag)
+               3= Text (content inside tag)
+               8= comment
+            
+   * nodeName tell which tag it is
+          
+   * nodeValue/textContent tell what is inside
+        -->nodeValue -old way it return null beacuse element has no direct value
+        -->textContent -crt way
+
+
+Attribute -->original HTML value(Initial value)
+             Does Not change automatically
+
+property -->current value in JS
+            changes when user types or js updates
+            .value,.checked,.id 
+
+
+
+Modifying the document:
+
+    create Element -->Used to create new HTML elements
+
+    Insertion Methods-->Add elements to the page (append/prepend,before/after)
+
+    inserAdjecentHTML/Element/Text--> insert content at specific positions(beforebegin,afterbegin,beforeend,afterend)
+
+    cloneNode--> used to copy element
+                 shallow copy-->copy=el.cloneNode(); copy only element
+                 Deep copy-->copy=el.cloneNode(true); copies element+content
+
+    documentFragment-->used to add multiple element efficiently
+
+
+
+
+styels and classes:
+
+styles--> change css directly using .style
+          el.style.backgroundColor = "yellow";
+
+classes--> instead of styling directly use css classes
+           el.classList.add("active"); -active is a class in <style>
+                       .remove
+                       .toogle-add if not present ,remove if present
+
+        
+Element Size & Scrolling:
+
+    box.offsetHeight// full height (with border)
+    box.clientHeight// visible height
+    box.scrollHeight// total content height
+
+        client → visible area
+        scroll → full content
+        offset → full box
+    box.scrollTop = 50;// scroll inside box
+    console.log(box.scrollTop);// current scroll position
+
+
+
+
+window Size & Scrolling:
+
+      innerWidth,innerHeight --> size of visible browser area
+      scrollY- verticall scroll,scrollX- horizontal scroll
+      
