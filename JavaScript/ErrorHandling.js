@@ -1,3 +1,5 @@
+
+
 //to Prevent program from crashing when an error happens
 
 try{
@@ -107,89 +109,4 @@ try{
     console.log("Remaining:",money);
 }catch(err){
     console.log("Transaction failed: ",err.message);
-}
-console.log("Thank You!!");
-
-
-
-/*
-function ValidationError(message) {
-  let err = new Error(message);
-  err.name = "ValidationError";
-
-  Object.setPrototypeOf(err, ValidationError.prototype);
-
-  return err;
-}
-ValidationError.prototype = Object.create(Error.prototype);
-
-
-
-function PropertyRequiredError(property) {
-  let err = ValidationError("Missing property: " + property);
-  
-  err.name = "PropertyRequiredError";
-  err.property = property;
-
-  Object.setPrototypeOf(err, PropertyRequiredError.prototype);
-
-  return err;
-}
-PropertyRequiredError.prototype = Object.create(ValidationError.prototype);
-
-
-function ReadError(message, cause) {
-  let err = new Error(message);
-
-  err.name = "ReadError";
-  err.cause = cause;
-
-  Object.setPrototypeOf(err, ReadError.prototype);
-
-  return err;
-}
-ReadError.prototype = Object.create(Error.prototype);
-
-
-function readUser(json) {
-  let user;
-
-  try {
-    user = JSON.parse(json);
-  } catch (e) {
-    throw ReadError("JSON Error", e);
-  }
-
-
-  try {
-    if (!user.name) {
-      throw PropertyRequiredError("name");
-    }
-    if (!user.age) {
-      throw PropertyRequiredError("age");
-    }
-  } catch (e) {
-    throw ReadError("Validation Error", e);
-  }
-
-  return user;
-}
-
-
-
-try {
-  readUser('{ "age": 25 }'); 
-} catch (e) {
-
-  if (e instanceof ReadError) {
-    console.log("Main Error:", e.message);
-    console.log("Original Error:", e.cause.message);
-
-  } else {
-    console.log("Unknown Error:", e.message);
-  }
-
-}*/
-
-
-
+}console.log("Thank You!!");
