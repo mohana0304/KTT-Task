@@ -110,3 +110,50 @@ try{
 }catch(err){
     console.log("Transaction failed: ",err.message);
 }console.log("Thank You!!");
+
+
+
+
+/*Types error caught by try ...catch
+       ReferenceError → using undefined variables
+       TypeError → wrong data type usage
+       RangeError → value out of range
+       SyntaxError (only in eval or dynamic code)
+       Custom errors (throw new Error())
+       URIError → When encodeURI() or decodeURI() is used incorrectly.
+
+*/
+
+
+// ReferenceError
+try {
+  console.log(x); // x not defined
+} catch (e) {
+  console.log(e.name); 
+}
+
+
+// TypeError
+try {
+  let num = 10;
+  num.toUpperCase(); // number has no toUpperCase()
+} catch (e) {
+  console.log(e.name); 
+}
+
+ // RangeError
+try {
+  let arr = new Array(-1); // invalid length
+} catch (e) {
+  console.log(e.name);
+}
+
+
+// URIError
+try {
+  decodeURI("%"); // invalid URI
+} catch (e) {
+  console.log(e.name); 
+}
+
+

@@ -75,12 +75,9 @@ let li= document.createElement("li");
 li.textContent="Element Insert";
 ul.insertAdjacentElement("beforebegin",li);
 
-
-
 //4. cloneNode
 let copy=el.cloneNode();
 copy
-
 copy = el.cloneNode(true);
 copy
 

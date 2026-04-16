@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    
+</head>
+<body>
+    <form id="myform" name="login" novalidate>
+        <input type="text" id="username" value="John" required minlength="5">
+        <input type="password" id="password" name="password" value="1234" required minlength="8">
+        <input type="checkbox" id="remember" name="remember" checked>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="errorsummary" style="background-color: rgb(237, 228, 168);width:350px;">
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

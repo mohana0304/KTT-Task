@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h2>Event Demo</h2>
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button id="addBtn">Add Task</button>
+    <ul id="taskList"></ul>
+
+<script>
+let input = document.getElementById("taskInput");
+let btn = document.getElementById("addBtn");
+let list = document.getElementById("taskList");
+
+
+
+function log(msg) {
+    console.log(msg);
+}
+
+function addTask(){
+    if(input.value==="") return alert("Enter something");
+
+    let li=document.createElement("li");
+    li.innerText=input.value;
+    li.draggable=true;
+
+    li.onclick=()=>log("Clicked: "+li.innerText);
+
+    li.ondblclick=()=>{
+        li.remove();
+        log("task deleted");
+    };
+
+    li.onmouseover = () => li.style.background = "lightblue";
+    li.onmouseout = () => li.style.background = "";
+
+    li.onpointerdown = () => log("Pointer down");
+    li.onpointerup = () => log("Pointer up");
+
+    li.ondragstart = () => {
+        li.style.opacity = "0.5";
+        log("Dragging");
+    };
+
+    li.ondragend = () => {
+        li.style.opacity = "1";
+        log("Drag End");
+    };
+
+    list.appendChild(li);
+    input.value = "";
+}
+
+
+btn.onclick = addTask;
+
+input.onkeydown = (e) => {
+    if (e.key === "Enter") {
+        addTask();
+    }
+};
+
+
+//window UI
+window.addEventListener("load", () => {
+    console.log("Page fully loaded");
+});
+
+window.addEventListener("resize", () => {
+    console.log("Window resized");
+});
+
+window.addEventListener("scroll", () => {
+    console.log("Scrolling...");
+});
+
+window.onscroll = () => log("Scroll: " + window.scrollY);
+
+//focus UI
+input.addEventListener("focus", () => {
+    console.log("Input focused");
+});
+
+input.addEventListener("blur", () => {
+    console.log("Input lost focus");
+});
+
+//Keyboard UI 
+document.addEventListener("keydown", (e) => {
+    console.log("Key:", e.key);
+});
+
+//mouse UI
+document.addEventListener("click", () => console.log("Clicked"));
+document.addEventListener("mousemove", () => console.log("Moving mouse"));
+
+
+
+
+</script>
+</body>
+</html>

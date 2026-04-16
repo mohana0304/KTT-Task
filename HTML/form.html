@@ -5,19 +5,22 @@
 
     </head>
     <body>
-        <div>
             <form method="post">
                 <label for="name">Name: </label>
                 <input id="name" type="text" name="name" placeholder="Enter your name"><br><br>
+
                 <label for="mail">Email: </label>
-                <input id="mail" type="mail" name="mail" placeholder="Enter Your MailID"><br><br>
+                <input id="mail" type="email" name="mail" placeholder="Enter Your MailID"><br><br>
+
                 <label for="password">Password: </label>
     <input type="password" id="password" name="password" placeholder="Enter your password" required autofocus><br><br>
-    <label for="birthday">DOB: </label>
-    <input type="date" id="birthday" name="birthday" placeholder="Enter your birthday" required><br><br>
-    <label for="age" >Age:</label><br>
-                
-    <input type="number" min="18" max="60" oninput="if(this.value > 60) this.value=60" required><br>
+
+    <label for="join">Joining Date: </label>
+    <input type="date" id="join" name="join" required><br><br>
+
+    <label for="age" >Age:</label><br>                
+    <input type="number" id="age" name="age" min="18" max="60"  required><br>
+
     <div style="display: flex; gap: 5px;">
     <fieldset style="width: fit-content;padding:5px;" >
        
@@ -66,7 +69,7 @@
 </textarea>
 <br><br>
     <label for="file">Upload Resume: </label>
-    <input type="file"  id="file" name="file" accept=".jpeg,.png"  >
+    <input type="file"  id="file" name="file" accept="image/jpeg, image/png">
     <br><br>
 
 
@@ -82,8 +85,73 @@
     
             </form>
            
+    <script>
+        document.getElementById("name").addEventListener("input",function(){
+            if(this.value.trim().length < 3){
+                this.style.border= "2px solid red";
+            }else{
+                this.style.border= "2px solid green";
+            }
+        });
 
-</form><br>
-        </div>
+        document.getElementById("mail").addEventListener("input",function(){
+            let pattern=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if(!this.value.match(pattern)){
+                this.style.border= "2px solid red";
+            }else{
+                this.style.border= "2px solid green";
+            }
+        });
+
+        document.getElementById("password").addEventListener("input",function(){
+            if(this.value.length < 6){
+                this.style.border= "2px solid red";
+            }else{
+                this.style.border= "2px solid green";
+            }
+        });
+
+        document.getElementById("join").addEventListener("change",function(){
+            let min=new Date("2024-01-01");
+            let max=new Date("2026-12-31");
+            let selected=new Date(this.Date);
+            if(selected < min || selected > max){
+                this.style.border= "2px solid red";
+            }else{
+                this.style.border= "2px solid green";
+            }
+        });
+
+
+        document.getElementById("age").addEventListener("input",function(){
+            if(this.value < 18 || this.value > 60){
+                this.style.border= "2px solid red";
+            }else{
+                this.style.border= "2px solid green";
+            }
+        })
+
+        document.getElementById("file").addEventListener("change",function(){
+            let file = this.files[0];
+
+            if (!file) return;
+
+            let allow = ["image/jpeg", "image/png"];
+
+            if (!allow.includes(file.type)) {
+                alert("Only JPEG and PNG images are allowed!");
+                this.value = ""; 
+                return;
+            }
+
+            if (file.size > 2 * 1024 * 1024) {
+                alert("File must be less than 2MB");
+                this.value = "";
+                return;
+            }
+        });
+
+    </script>
+
     </body>
 </html>

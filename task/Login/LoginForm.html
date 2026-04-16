@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <form id="myform" novalidate class="form">
+
+    <div class="input-group">
+        <input type="text" id="username" required>
+        <label>Username</label>
+        <small id="userError"></small>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="email" required>
+        <label>Email</label>
+        <small id="emailError"></small>
+    </div>
+
+    <div class="input-group">
+        <input type="password" id="password" required>
+        <label>Password</label>
+        <small id="passError"></small>
+    </div>
+
+    <div class="input-group">
+        <input type="password" id="confirmpass" required>
+        <label>Confirm Password</label>
+        <small id="confirmError"></small>
+    </div>
+
+
+    <button type="submit">Submit</button>
+
+</form>
+
+    <script src="script.js"></script>
+</body>
+</html>
