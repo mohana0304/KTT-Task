@@ -1,0 +1,410 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop Pro 15",
+      "price": 75000,
+      "category": "Electronics",
+      "stock": 10,
+      "rating": 4.5
+    },
+    {
+      "id": "2",
+      "name": "Smartphone X",
+      "price": 30000,
+      "category": "Electronics",
+      "stock": 25,
+      "rating": 4.3
+    },
+    {
+      "id": "3",
+      "name": "Wireless Headphones",
+      "price": 4000,
+      "category": "Electronics",
+      "stock": 50,
+      "rating": 4.4
+    },
+    {
+      "id": "4",
+      "name": "Bluetooth Speaker",
+      "price": 2500,
+      "category": "Electronics",
+      "stock": 40,
+      "rating": 4.2
+    },
+    {
+      "id": "5",
+      "name": "Gaming Mouse",
+      "price": 1500,
+      "category": "Electronics",
+      "stock": 60,
+      "rating": 4.1
+    },
+    {
+      "id": "6",
+      "name": "Mechanical Keyboard",
+      "price": 3500,
+      "category": "Electronics",
+      "stock": 30,
+      "rating": 4.6
+    },
+    {
+      "id": "7",
+      "name": "Monitor 24 inch",
+      "price": 12000,
+      "category": "Electronics",
+      "stock": 20,
+      "rating": 4.5
+    },
+    {
+      "id": "8",
+      "name": "Smart Watch",
+      "price": 5000,
+      "category": "Electronics",
+      "stock": 35,
+      "rating": 4.3
+    },
+    {
+      "id": "9",
+      "name": "Tablet 10 inch",
+      "price": 18000,
+      "category": "Electronics",
+      "stock": 15,
+      "rating": 4.2
+    },
+    {
+      "id": "10",
+      "name": "Power Bank",
+      "price": 1200,
+      "category": "Electronics",
+      "stock": 70,
+      "rating": 4.1
+    },
+    {
+      "id": "11",
+      "name": "Men T-Shirt",
+      "price": 700,
+      "category": "Fashion",
+      "stock": 100,
+      "rating": 4
+    },
+    {
+      "id": "12",
+      "name": "Women Dress",
+      "price": 1500,
+      "category": "Fashion",
+      "stock": 80,
+      "rating": 4.2
+    },
+    {
+      "id": "13",
+      "name": "Jeans",
+      "price": 1200,
+      "category": "Fashion",
+      "stock": 60,
+      "rating": 4.1
+    },
+    {
+      "id": "14",
+      "name": "Jacket",
+      "price": 2500,
+      "category": "Fashion",
+      "stock": 40,
+      "rating": 4.4
+    },
+    {
+      "id": "15",
+      "name": "Sneakers",
+      "price": 3000,
+      "category": "Fashion",
+      "stock": 50,
+      "rating": 4.5
+    },
+    {
+      "id": "16",
+      "name": "Formal Shoes",
+      "price": 2800,
+      "category": "Fashion",
+      "stock": 45,
+      "rating": 4.3
+    },
+    {
+      "id": "17",
+      "name": "Backpack",
+      "price": 900,
+      "category": "Fashion",
+      "stock": 75,
+      "rating": 4.2
+    },
+    {
+      "id": "18",
+      "name": "Cap",
+      "price": 300,
+      "category": "Fashion",
+      "stock": 120,
+      "rating": 3.9
+    },
+    {
+      "id": "19",
+      "name": "Sunglasses",
+      "price": 800,
+      "category": "Fashion",
+      "stock": 90,
+      "rating": 4.1
+    },
+    {
+      "id": "20",
+      "name": "Watch Analog",
+      "price": 2000,
+      "category": "Fashion",
+      "stock": 55,
+      "rating": 4.2
+    },
+    {
+      "id": "21",
+      "name": "Office Chair",
+      "price": 7000,
+      "category": "Furniture",
+      "stock": 20,
+      "rating": 4.4
+    },
+    {
+      "id": "22",
+      "name": "Study Table",
+      "price": 6000,
+      "category": "Furniture",
+      "stock": 15,
+      "rating": 4.3
+    },
+    {
+      "id": "23",
+      "name": "Sofa Set",
+      "price": 25000,
+      "category": "Furniture",
+      "stock": 10,
+      "rating": 4.5
+    },
+    {
+      "id": "24",
+      "name": "Bed Frame",
+      "price": 18000,
+      "category": "Furniture",
+      "stock": 8,
+      "rating": 4.2
+    },
+    {
+      "id": "26",
+      "name": "Bookshelf",
+      "price": 4000,
+      "category": "Furniture",
+      "stock": 18,
+      "rating": 4.1
+    },
+    {
+      "id": "27",
+      "name": "Dining Table",
+      "price": 15000,
+      "category": "Furniture",
+      "stock": 7,
+      "rating": 4.4
+    },
+    {
+      "id": "28",
+      "name": "TV Unit",
+      "price": 8000,
+      "category": "Furniture",
+      "stock": 12,
+      "rating": 4.2
+    },
+    {
+      "id": "29",
+      "name": "Coffee Table",
+      "price": 3000,
+      "category": "Furniture",
+      "stock": 25,
+      "rating": 4
+    },
+    {
+      "id": "30",
+      "name": "Recliner Chair",
+      "price": 12000,
+      "category": "Furniture",
+      "stock": 6,
+      "rating": 4.5
+    },
+    {
+      "id": "31",
+      "name": "Cooking Pan",
+      "price": 1500,
+      "category": "Home",
+      "stock": 40,
+      "rating": 4.3
+    },
+    {
+      "id": "32",
+      "name": "Mixer Grinder",
+      "price": 3500,
+      "category": "Home",
+      "stock": 30,
+      "rating": 4.4
+    },
+    {
+      "id": "33",
+      "name": "Water Bottle",
+      "price": 300,
+      "category": "Home",
+      "stock": 100,
+      "rating": 4
+    },
+    {
+      "id": "34",
+      "name": "Vacuum Cleaner",
+      "price": 6000,
+      "category": "Home",
+      "stock": 20,
+      "rating": 4.3
+    },
+    {
+      "id": "35",
+      "name": "Air Purifier",
+      "price": 9000,
+      "category": "Home",
+      "stock": 15,
+      "rating": 4.4
+    },
+    {
+      "id": "36",
+      "name": "Electric Kettle",
+      "price": 1200,
+      "category": "Home",
+      "stock": 50,
+      "rating": 4.2
+    },
+    {
+      "id": "37",
+      "name": "Iron Box",
+      "price": 1000,
+      "category": "Home",
+      "stock": 60,
+      "rating": 4.1
+    },
+    {
+      "id": "38",
+      "name": "Ceiling Fan",
+      "price": 2500,
+      "category": "Home",
+      "stock": 35,
+      "rating": 4.3
+    },
+    {
+      "id": "39",
+      "name": "LED Bulb Pack",
+      "price": 500,
+      "category": "Home",
+      "stock": 80,
+      "rating": 4
+    },
+    {
+      "id": "40",
+      "name": "Curtains",
+      "price": 2000,
+      "category": "Home",
+      "stock": 25,
+      "rating": 4.2
+    },
+    {
+      "id": "41",
+      "name": "Cricket Bat",
+      "price": 1800,
+      "category": "Sports",
+      "stock": 30,
+      "rating": 4.3
+    },
+    {
+      "id": "42",
+      "name": "Football",
+      "price": 800,
+      "category": "Sports",
+      "stock": 50,
+      "rating": 4.1
+    },
+    {
+      "id": "43",
+      "name": "Badminton Racket",
+      "price": 1200,
+      "category": "Sports",
+      "stock": 45,
+      "rating": 4.2
+    },
+    {
+      "id": "44",
+      "name": "Tennis Ball Pack",
+      "price": 600,
+      "category": "Sports",
+      "stock": 70,
+      "rating": 4
+    },
+    {
+      "id": "45",
+      "name": "Yoga Mat",
+      "price": 900,
+      "category": "Sports",
+      "stock": 40,
+      "rating": 4.4
+    },
+    {
+      "id": "46",
+      "name": "Dumbbells Set",
+      "price": 2500,
+      "category": "Sports",
+      "stock": 20,
+      "rating": 4.5
+    },
+    {
+      "id": "47",
+      "name": "Skipping Rope",
+      "price": 300,
+      "category": "Sports",
+      "stock": 80,
+      "rating": 4.1
+    },
+    {
+      "id": "48",
+      "name": "Gym Gloves",
+      "price": 500,
+      "category": "Sports",
+      "stock": 60,
+      "rating": 4.2
+    },
+    {
+      "id": "49",
+      "name": "Cycling Helmet",
+      "price": 1500,
+      "category": "Sports",
+      "stock": 25,
+      "rating": 4.3
+    },
+    {
+      "id": "50",
+      "name": "Waterproof Bag",
+      "price": 1100,
+      "category": "Sports",
+      "stock": 35,
+      "rating": 4.2
+    },
+    {
+      "name": "Phone",
+      "price": 20000,
+      "id": "KbfiXGULGso"
+    },
+    {
+      "name": "Laptop Dell",
+      "price": 75000,
+      "category": "electronics",
+      "stock": "3",
+      "rating": "3",
+      "id": "lR3npkvp35A"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
