@@ -1,0 +1,262 @@
+Node.js 
+    traditionally, js was only used in web browsers 
+    node.js changed that by allowing developers to use javaScript for backend development (server-side programming).
+
+node.js is a runtime environment that allows you to run js outside te browser,mainly for building backend applications.
+        before Node.js
+                js - only in browsers(frontend)
+                backend - languages like java,PHP,Python
+        after node.js
+                js - full stack( frontend + backend)
+    
+    it is built on the v8 js engine, which compiles js into fast machine code.
+
+
+key features of node.js
+    1.Asynchronous & non-blocking
+            Node.js handles multiple requests at the same time using an event-driven, non-blocking I/O model.
+    2.Event-driven architecture
+            everything in node.js revolves around events  
+            it works based on events and listeners
+    3.single-threaded 
+            uses event loop + background workers 
+            can handle thousands of requests simultaneously
+    4.fast execution
+            node.js uses the v8 js engine
+            this converts js -> machine code
+            uses JIT(just in time) compilation
+    5.huge ecosystem(npm)
+            node.js comes with npm
+            millions of packages (libraries)
+            ready-made solutions
+    
+1. Client sends request
+2. Request enters event queue
+3. Event loop pushes it to call stack
+4. Code execution starts
+5. Sync code → runs immediately
+6. Async code → sent to background (libuv/OS)
+7. Node continues other work
+8. Async task completes
+9. Callback goes to queue (microtask/callback)
+10. Event loop checks call stack
+11. Moves callback to stack
+12. Executes callback
+13. Response sent to client
+
+
+1.incoming request
+    client (browser/app) sends a request to the node.js server
+        this request enters node.js through the event queue
+2.Event queue (task Queue)
+    all incoming requests are stored in a queue
+    they wait to be processed by the main thread
+3.call stack (main thread)
+    The event loop pushes tasks from the queue into the call stack
+    The call stack executes code line by line (synchronous first)
+4.check:sync or Async 
+    if task is sync - excutes immediately in call stack
+    if task is async - task is given to backgroup system
+    
+    5.background processing (libuv + os)
+        node.js uses an internal library 
+        libuv(thread pool + os async APIs)
+        heavy tasks go to 
+                    thread pool( for file system,crypto)
+                    os kernel (for networking)
+
+6. continue excution(Non-blocking)
+        while background tasks run node.js doest not wait
+        continue executing next tasks in call stack
+
+7.callback queue/microtask queue
+    when async work finishes
+    callback queue(macrotasks)
+        setTimeout,setinterval,I/O callbacks
+    microtask queue(higher priority)
+        promises(.then/catch),process.nextTick()
+
+8.event loop (decision maker)
+    the event loop continuously runs and decides
+    is call stack empty?
+    no - wait
+    yes - take next task from queue
+        Microtask queue (first)
+        Callback queue (next)
+
+9.execute callback
+    Event loop pushes callback into call stack
+    Code executes
+    Response may be generated
+
+10.Send Response
+    After processing:
+    Data is returned to client
+    HTTP response is completed 
+
+
+use cases of Node.js
+    1.web servers & Rest APIs
+        using node.js (with express.js) you can build 
+            building backend servers
+            creating restful APIs (GET,POST,PUT,DELETE)
+    
+    2.real time applications
+        node.js is perfect for apps where data updates instantly
+        eg : chat app(whatsapp),live notification, multiplayer games
+    3.streaming applications
+        used for apps that stream data continuously
+        (netflix,youtube)
+        uses strams - send data in chunks
+        no need to load full file at once
+    4.e-commerce platforms
+        node.js powers fast and scalable shopping apps
+        (eBay,walmart)
+        handles high traffic
+        fast checkout experience
+    5.Backend for mobile apps
+        node.js is widely used as a backend for mobile apps.
+        (authentication,push notifications,APIs)
+        lightweight,fast API responses
+
+History & Evolution of Node.js
+    2009 — Creation
+        Created by Ryan Dahl
+        Introduced non-blocking, event-driven server-side JavaScript
+        Built on V8 JavaScript Engine
+    2010 — npm Released
+        npm launched
+        Enabled sharing reusable packages → rapid growth
+    2011–2014 — Growth
+        Widely adopted for web apps and APIs
+        Rise of frameworks like Express
+    2015+ — Foundation Support
+        Managed by OpenJS Foundation
+    2016–Present — Modern Era
+        Added modern JS features (ES6, async/await)
+        Widely used in cloud, APIs, and real-time apps
+        Used by companies like Netflix and PayPal
+    
+Installing Node.js (window/mac/linux)
+    Go to Node.js official website and download the LTS (Long Term Support) version.
+    On Windows: Download .msi installer
+        node -v
+        npm -v
+    On macOS:Download .pkg installer and install
+        brew install node
+    On Linux (Ubuntu/Debian):
+        sudo apt update
+        sudo apt install nodejs npm
+
+
+Node Version Manager (NVM) is a tool that lets you:
+        Install multiple versions of Node.js
+        Switch between them anytime
+        Avoid version conflicts in different projects
+
+        on window - use nvm-Windows
+            Download installer from GitHub
+            Install it
+            Open Command Prompt
+        on mac/linux
+            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+            Restart terminal, then check: nvm -v
+        
+        basic NVM Commands
+        1.install node version - nvm install 18
+        2.use a version - nvm use 18
+        3.see installed versions- nvm list 
+        4.set default version - nvm alias default 18
+        5.check current version  -  node -v
+
+setting up node.js app 
+    1.make sure node.js is installed
+        node -v
+        npm -v
+    2.create your project folder
+        mkdir my-app
+        cd my-app
+    3.initialize the project
+        npm init -y
+        //this creates a package.json file
+        package.json stores 
+                project name,version,dependencies(libraries),scripts
+    4.create your first file  - app.js
+    5.run your app - node app.js
+    Creates a node_modules/ folder (if not already there)
+        npm install lodash
+        Lodash gives you ready-made functions for: 
+        Working with arrays, Objects,Strings,Deep cloning,Data manipulation
+
+
+streams & buffers
+    a buffer is a temporary storage for binary data
+    eg : file data,video chunks,network data
+    const buffer = Buffer.from("Hello");
+    console.log(buffer);
+    //<Buffer 48 65 6c 6c 6f> stores raw data (not readable directly)
+
+    streams handle data piece by piece instead of loading everything at once
+
+    1.Readable stream (read data)
+        const fs = require("fs");
+        const stream = fs.createReadStream("bigfile.txt");
+        stream.on("data", chunk => {
+        console.log(chunk);
+        });//reads file chuck by chuck
+
+    2.writable stream (write data)
+        const writeStream = fs.createWriteStream("output.txt");
+        writeStream.write("Hello ");
+        writeStream.write("World!");
+        writeStream.end();
+        //data is written step by step ,efficient for large data
+
+    3.Duplex stream (Read + Write)
+        const net = require("net");
+        const server = net.createServer((socket) => {
+        socket.write("Hello client!\n");
+        socket.on("data", (data) => {
+            console.log("Client says:", data.toString());
+        });
+        });
+        server.listen(4000);
+        //socket can:Read data (on("data")),Write data (write())
+
+    4.transform stream(modify data while streaming)
+        Reads → modifies → writes
+        const { Transform } = require("stream");
+        const upperCase = new Transform({
+          transform(chunk, encoding, callback) {
+              this.push(chunk.toString().toUpperCase());
+                  callback();
+                }
+        });
+        process.stdin.pipe(upperCase).pipe(process.stdout);
+        //type somrthing in terminal (hello) but output (HELLO) 
+
+
+
+modules in node.js 
+    is a file (clean ,reusable,maintainable)
+
+    built-in modules
+        file system - fs (used to work with files)
+        path - path (handles file paths safely)
+        http - http (create servers)
+
+    creating custom modules
+        math.js - has add,sub etc.. of methods/function
+        module.exports=add;
+        
+        require() → imports module
+        module.exports → exports data
+
+    npm(node package manager)
+        npm is used to install and manage external modules
+
+        npm init -y  : create project
+        npm install  : install all deps 
+        npm install package : install one
+        npm uninstall package : remove package
+        
