@@ -183,3 +183,18 @@ console.log(str.match(regex));
 console.log(str.replace(regex, "$999"));
 console.log(str.search(regex));
 console.log(str.split(regex));
+
+/*
+
+/^[a-zA-Z0-9_+.-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/
+
+*/
+
+console.log("abc123xyz45".match(/\d+/g));
+console.log("Hello world JS".match(/\w+/g));
+console.log("hello world js".replace(/\s/g,"-"));
+console.log(/^\d+$/.test("12345"));
+console.log("hello@123!".replace(/[^a-zA-Z0-9]/g,""));
+console.log("#js #regex #web".match(/\#\w+/g));
+console.log("Hello world JavaScript Regex".match(/\b[A-Z][a-zA-Z]*\b/g));
+console.log("$500 300 $400".match(/(?<=\$)\d+/g));

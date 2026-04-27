@@ -53,12 +53,14 @@ JavaScript Animations
 */
 
 /*
-Web Components
+Web Components:
+______________
     a way of create own reusable HTML elements
     <my-card></my-card>
     the data in this elements are private not change by comman styles
 
-Custom Elements
+Custom Elements:
+__________________
     define a new HTML element using js 
         class MyCard extend HTMLElement{
         connectedCallback(){
@@ -69,18 +71,50 @@ Custom Elements
 
     after define class and register it, then use it like normal HTML element
     
-shadow DOM
+shadow DOM:
+___________
     encapsulated DOM inside an element/ isolate structure and style
     it hides HTML structure and CSS styles from the outside world
     style inside do not affect outside likewise for outside
 
-template Element
+    it has slots
+    =============
+                placeholders inside a component
+                allow outside content to be inserted inside shadow DOM
+                    <my-card>
+                        <h1 slot="title">My Title</h1>
+                        <p>Contenet here</p>
+                    </my-card>
+    
+    composition means combin light DOM + shadow DOM
+    ===========
+            light DOM - content you write inside component
+            shadoe DOM - internal structure
+            slot - connect both
+
+    Slots = placeholders for external content
+    Composition = how internal + external DOM combine
+
+    shadow DOM styling
+    ==================
+        is about how CSS works inside a Shadow DOM and how it interacts with the outside page.
+        define style inside the shadow root
+        style host element(my-card) using :host{ }
+        style slotted content by ::slotted(){ }
+     
+    shadow DOM & events
+    ===================
+        feel tricky because of encapsulation.
+        events still bubble up(bubble outside to the main page)
+        click inside shadow DOM -> event reaches document.body -> 
+        when event comes out of shadow DOM -> event.target is changed (retargeted)
+        for that e.composedPath() shows full path ,
+        or composed: false -> event stay inside shadow DOM
+
+
+template Element:
+__________________
     it store HTML  invisible in the DOM untile use it
     not display on page,excuted
     used as a blueprint for creating elements
-    
-
-
-
-
 */

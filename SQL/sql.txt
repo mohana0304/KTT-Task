@@ -1,0 +1,369 @@
+database:
+    is just an organized collection of data stored on a computer
+    data is arranged in tables
+    
+
+
+Relational Databses:
+    A relational database is based on the concept of a relation (from mathematics):
+        Table (Relation) → A structured dataset
+        Row (Tuple) → A single record
+        Column (Attribute) → A property of that record
+
+    key concept:
+        primarykey -uniquely identifies each Row
+        foreign key - connects one table to another
+        Relationships - One-to-One → One user → one profile
+                        One-to-Many → One customer → many orders
+                        Many-to-Many → Students ↔ Courses (via join table)
+        schema(structure) - defines tables,columns,datatypes,constraints in relational databases
+                            schema is strict and predefined
+        ACID Properties - Atomicity → Transaction succeeds fully or fails fully
+                          Consistency → Data always follows rules
+                          Isolation → Transactions don’t interfere
+                          Durability → Data is permanently saved
+        
+    Benefits:
+        strong data integrity - constraints prevent invalid data (No duplicate primary keys ,foreign key must exist) 
+        structured & Organized - fixed schema ,Easy to understand Relationships
+        Powerful Querying(SQL) - join multiple tables, Aggregate data(SUM,COUNT),filter with conditions
+        Transaction support (ACID)
+    Limitations:
+        Rigid schema - structure must be defined in advance, changing schema later is difficult
+        scaling issues - vertically → bigger server (RAM/CPU)
+        performance  with large joins - JOIN operations become slow on massive datasets, complex queries can degrade performance
+    
+SQL - structured,relational,strict
+NoSQL - flexible,scalable,less Rigid
+
+SQL :(Structured Query language)
+    is a language used to communicate with databases.
+    this store data in tables with predefined schema and Relationships.
+    eg: (MySQL,PostgreSQL,Oracle database)
+
+    fixed schema, Table based structure, strong consistency,powerful Querying
+
+NoSQL :
+    this are designed for flexibility and scalability
+    eg: MongoDB(document),Redis(key-value),Apache cassandra(column),Neo4j(graph)
+    
+    flexible schema,different data Models (document,key -value, column family,graph)
+    Horizontal scalability - Easily distributed across many serevers
+
+
+
+Types of SQL Commands :
+    DDL(Data definition language) - to create or modify structure 
+                                    CREATE,ALTER,DROP
+    DML(Data Manipulation Language)-to work with data
+                                    SELECT,INSERT,UPDATE,DELETe
+    DCL(Data Control Language)-for permissions & security
+                                GRANT,REVOKE
+
+Types of databases:
+    RDBMS(Relational Databses) - Data stored in tables
+    NoSQL Databses - Data stored as documents
+
+SQL standards & Dialects:
+    SQL is a standard language,but each database has its own version 
+    these versions are called dialects 
+    eg: MySQL SQL , Oracle PL/SQL , Microsoft T-SQL
+
+
+Types of Tokens:
+    KeyWords - SELECT,FROM,WHERE,INSERT ..(Not case -sensitive, Usually written in UPPERCASE)
+    Literals (values) - String,Number,Boolean,Date,Time
+    Identifiers - Table names,cloumn names
+    Expressions - combination of values + operators (eg : salary *1.10 -->increases salary by 10%)
+    comments in SQL - single-line (--)
+                      Multi-line (/* */)
+    
+
+Feature	SQL	NoSQL
+Structure	Tables	Flexible formats
+Schema	Fixed	Dynamic
+Relationships	Strong (JOINs)	Usually avoided
+Transactions	ACID	Often BASE (eventual consistency)
+Scalability	Vertical	Horizontal
+Query Language	Standard SQL	Varies
+Best For	Structured data	Large, flexible data
+
+
+SQL KeyWords:
+    are reserved words used to perform operations on a database.
+    SELECT - to fetch data
+    FROM - specifies the table
+    WHERE - filters rows
+    AND/OR -combine conditions
+    IN - cleaner multiple conditions
+    LIKE - pattern matching
+    BETWEEN - Range filtering
+
+    ORDER BY - sort results
+    LIMIT - restrict number of rows
+
+    COUNT,MAX,MIN,SUM,AVG
+    GROUP BY - groups rows
+    HAVING - filters grouped data
+    
+    JOIN,LEFT JOIN,RIGHT JOIN,INSERT INTO,UPDATE,DELETE 
+    
+Data Types :
+            define what kind of data a column can store
+            INT - whole number
+            SMALLINT -small number
+            BIGINT - very large number
+            DECIMAL/NUMERIC - precise numbers 
+            FLOAT/DOUBLE -Approximate 
+            CHAR(Fixed Length)- always uses fixed sapce,faster but wastes memory
+            VARCHAR(Vriable Length) - stores only needed sapce
+            DATE 
+            TIME 
+            DATETIME/ TIMESTAMP - date+Time
+            BOOLEAN 
+            JSON 
+            ENUM -restrict values to alist
+            TEXT 
+
+operators :
+    = - equal
+    != or <>  -Not equal
+    > - greater than
+    < - less than
+    >= - greateror equal
+    <= - less or equal
+    AND,OR,NOT 
+    IN -alternative to multiple OR 
+    BETWEEN 10 AND 30
+    LIKE -pattern matching
+          % -any number of characters
+          _ - single character
+
+          LIKE 'A%'   -- starts with A
+          LIKE '%n'   -- ends with n
+          LIKE '_a%'  -- second letter is 'a'
+    IS NULL - cannot use NULL
+    IS NOT NULL
+
+    EXIST - checks if subquery returns rows
+    ANY/ALL - Grater than at least one value/ all values
+
+
+data constraints:
+    this are rules applied to table columns to ensure
+    data is valid
+    data is consistent
+    relationships between tables are maintained
+
+    primary key - uniquely identifies each row 
+                  cannot contain NULL 
+                  cannot have duplicate values
+    foreign key - link one table to another 
+                  Ensures referential integrity
+    unique - prevents duplicate values
+             allows NULL(depend on DB)
+    NOT NULL - column must have a value
+               cannot be empty
+    check - enforces custom rules
+    
+
+JOIN:
+    inner join - return only matching rows between both tables
+    left join - all rows from left table 
+                matching rows from RIGHT
+                no match->NULL
+    right join - all rows from right table
+                 matching rows from left 
+                 no match->NULL
+    full outer join - all rows from both tables
+                      match where possible
+                      else ->NULL
+                     
+
+scalar subquery 
+        select name,salary from employees where salary > (select avg(salary) from employees);
+        inner query -> return one value
+        outer query compares each row
+
+column subquery
+        return one column multiple rows
+Row subquery
+        return one row with  multiple columns
+table subquery
+        return a full table
+
+Types of subquery
+        1. Non-correlated subquery -independent query (runs once)
+                select name from employees where salary > ( select avg(salary) from employees);
+
+        2. correlated subquery - depends on outer query (runs per row)
+                select name from employees e where salary > ( select avg(salary) from employees where dept=e.dept);
+
+Nested subqueries 
+    subquery inside another subquery
+
+special subquery operators
+    in
+    exist
+    any
+    all
+    
+
+string function
+    CONCAT (Combine columns)
+    SUBSTRING (Extract part of string)-name FROM 1 FOR 3(First 3 letters of name)
+    REPLACE (Replace text)
+    UPPER / LOWER (Case conversion)
+    LENGTH (String length)
+
+Numeric Functions
+    FLOOR (Round down)
+    CEILING (Round up)
+    ROUND (Round to decimal places)
+    ABS (Absolute value)
+    MOD (Remainder)
+
+Date and Time Functions
+    CURRENT DATE / TIME
+    AGE(join_date) -AGE of employee (based on join_date)
+    EXTRACT (like DATEPART) 
+    DATEADD (PostgreSQL equivalent using INTERVAL)
+    TIME difference
+
+Conditional Functions
+    CASE (IF-ELSE logic)
+    COALESCE (Handle NULL values)
+    NULLIF (Compare values)
+
+index
+    without index - DB scans every row (full table scan)
+    with index - DB uses fast lookup (like binary search/ b-tree)
+    faster select queries
+    faster filtering
+
+Transaction
+    is a set of sql operations esecuted as one unit
+    BEGIN (Start Transaction)
+    COMMIT (Save Changes)
+    ROLLBACK (Undo Changes)
+    SAVEPOINT (Partial Rollback) - Allows rollback to a specific point
+    ACID Properties (Very Important) - These ensure reliable transactions
+        A – Atomicity (All or Nothing) Either all queries run OR none
+        C – Consistency  Database remains valid before & after
+        I – Isolation  Transactions don’t interfere with each other
+        D – Durability  Once committed → data is permanent (even after crash)
+
+
+1. Atomicity (All or Nothing)
+    If one fails → everything rolls back
+
+2. Consistency (Valid State)
+     Data always follows rules (constraints)
+
+3. Isolation (No Interference)
+    Transactions don’t affect each other
+
+4. Durability (Permanent)
+    Once committed → data is saved permanently
+
+
+
+
+--BASIC SQL
+
+CREATE TABLE employees(
+  id INT PRIMARY KEY,
+  name VARCHAR(50),
+  age INT,
+  salary DECIMAL(10,2),
+  department VARCHAR(50)
+  );
+  
+INSERT INTO employees (id, name, age, salary, department) VALUES
+(1, 'Ravi', 25, 30000, 'IT'),
+(2, 'Priya', 30, 50000, 'HR'),
+(3, 'Arun', 28, 40000, 'IT'),
+(4, 'Meena', 35, 60000, 'Finance'),
+(5, 'Kiran', 26, 35000, 'HR');
+
+SELECT * FROM employees;
+
+SELECT name,salary FROM employees;
+
+SELECT * FROM employees where salary > 40000;
+
+--sorting Data
+SELECT * FROM employees ORDER BY salary DESC;
+
+SELECT COUNT(*) FROM employees;
+
+SELECT AVG(salary) FROM employees;
+
+SELECT MAX(salary) FROM employees;
+
+SELECT department,COUNT(*) AS total_employees FROM employees GROUP BY department;
+
+SELECT department,AVG(salary)AS avg_salary FROM employees GROUP BY department
+HAVING AVG(salary)>40000;
+
+UPDATE employees SET salary =salary +500 WHERE department = 'IT';
+
+
+DELETE FROM employees WHERE salary < 35000;
+
+SELECT * FROM employees;
+
+
+
+create table students(
+student_id int primary key,
+name varchar(10),
+age int,
+city varchar(10),
+admission_date date
+);
+
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(100),
+    fee DECIMAL(10,2)
+);
+
+CREATE TABLE enrollments (
+    enroll_id INT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    marks INT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+
+insert into students values (1, 'Arun', 20, 'Chennai', '2023-06-01'),
+(2, 'Priya', 21, 'Madurai', '2023-06-05'),
+(3, 'Kumar', 19, 'Coimbatore', '2023-06-10');
+
+INSERT INTO courses VALUES
+(101, 'SQL Basics', 5000),
+(102, 'Python', 7000);
+
+INSERT INTO enrollments VALUES
+(1, 1, 101, 85),
+(2, 2, 101, 90),
+(3, 3, 102, 75),
+(4, 1, 102, 88);
+
+
+select * from students where city ='chennai';
+
+select * from students where age > 19 and city='chennai';
+
+select * from students where age > 19 or city='chennai';
+
+select * from students where name like 'A%';
+
+select * from students where age between 19 and 21;
+
+select * from students where city in ('chennai','Madurai');
+
+select * from students where city not in ('chennai','Madurai');
+
