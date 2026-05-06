@@ -24,7 +24,9 @@ function fetchpromises(){
     });
 }
 
-fetchpromises().then(console.log);
+fetchpromises()
+.then(console.log)
+.catch((err)=>console.log(err));
 
 async function run(){
     const data=await fetchData();
@@ -37,13 +39,3 @@ console.log(buffer);
 console.log(buffer.toString());
 
 
-const fs= require("fs");
-const stream =fs.createReadStream("sample.txt","utf8");
-stream.on("data",(chunk)=>{
-    console.log("Chuck:",chunk);
-});  
-
-const path = require("path");
-
-console.log(path.basename(__filename));
-console.log(path.extname(__filename));

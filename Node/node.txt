@@ -30,6 +30,17 @@ key features of node.js
             millions of packages (libraries)
             ready-made solutions
     
+
+
+multiple client send http requests to the web server(cilent 1 to client n)
+the web server keeps a set of pre allocated threads(t-1 ,...t-m)
+when request arrives the server assign a specific thread from the pool to handle it like request 1 handle by thread t-1
+  this thread  receives the request ,run  the code ,process everything step by step ,prepares result, send back the response(like jsp page or Json data)
+if thread T-1 needs to fetch data from a database ,it sends the query and then waits (blocks) util the database responds
+while waiting that thread cannot handle any other incoming requests.
+
+
+
 1. Client sends request
 2. Request enters event queue
 3. Event loop pushes it to call stack
@@ -44,6 +55,16 @@ key features of node.js
 12. Executes callback
 13. Response sent to client
 
+
+
+call stack - standard synchronous code .the loop cannot move to the next step until the stack is completely empty
+microtask queue (high priority) - as soon as call stack is empty event loopimmediately check the microtask queue
+                                (promises.then(),catch(),finally() and queuemicrotask())
+                                the loop will not move until the queue is 100% empty
+macrotasks queue - the event loop pick one task from the macrotask queue
+                   (setTimeout,setinterval)
+                   after executing one macrotask ,it again check the microtask queue if it has run untile empty and then it pick one from macrotask 
+                   
 
 1.incoming request
     client (browser/app) sends a request to the node.js server
@@ -149,6 +170,15 @@ Installing Node.js (window/mac/linux)
         sudo apt install nodejs npm
 
 
+Feature     	NVM	            FNM
+Language	    Shell script	Rust (compiled)
+Speed	        Slower	        Very fast 
+Startup time	Slower	        Instant
+PATH handling	Heavy	        Lightweight
+Windows support	Separate tool	Better support
+Popularity	    Very popular	Growing
+
+
 Node Version Manager (NVM) is a tool that lets you:
         Install multiple versions of Node.js
         Switch between them anytime
@@ -204,7 +234,7 @@ streams & buffers
         stream.on("data", chunk => {
         console.log(chunk);
         });//reads file chuck by chuck
-
+    
     2.writable stream (write data)
         const writeStream = fs.createWriteStream("output.txt");
         writeStream.write("Hello ");
@@ -244,7 +274,7 @@ modules in node.js
         file system - fs (used to work with files)
         path - path (handles file paths safely)
         http - http (create servers)
-
+    
     creating custom modules
         math.js - has add,sub etc.. of methods/function
         module.exports=add;
@@ -260,3 +290,136 @@ modules in node.js
         npm install package : install one
         npm uninstall package : remove package
         
+
+working with files
+        All file operations run at the same time (async)
+        fs.readFile (asynchronous) / fs.readFilesync (synchronous) block execution not recommended
+        fs.createReadStream (streams) - reads file in chucks 
+                                        best for large files
+        
+        fs.writeFile (asynchronous) / fs.writeFilesync (synchronous)
+        fs.appendFile
+        fs.createReadStream -efficient for large or continuous writes
+
+        working with directories
+                fs.mkdir -create folder
+                fs.readdir - read files from folder
+                fs.rmdir/fs.rm
+
+
+                fs.stat -file info (data.isFile(),data.size)
+                fs.rename
+                fs.unlink
+                fs.access - check whether a file exists and/or if you have permission to access it.
+                            fs.constants.R_OK → Read permission
+                            fs.constants.W_OK → Write permission
+                            fs.constants.X_OK → Execute permission
+                            fs.constants.F_OK → check if the file exists
+
+
+Express.js
+        is a minimal web framework for Node.js
+        it helps to build web servers
+                    handle http requests
+                    create API
+
+
+DataTables is a popular, free jQuery plugin for HTML that adds advanced interactivity 
+to tables, including searching, sorting, and pagination. 
+
+
+
+app.use(express.json()) - if request has json data automatically convert it into js object in  req.body
+
+***npm install method-override
+
+
+
+JWT(JSON Web tokens)
+        is a secure token 
+        instead of storing session data on the server,JWT stores user info inside a token
+
+        it has 3 parts 
+                  Header → algorithm used
+                        
+                        Contains metadata about the token, 
+                        such as the algorithm used for signing.
+
+                  Payload → user data (id, email)
+                  
+                  Signature → ensures token is not tampered  
+                              Ensures the token's integrity and authenticity
+
+
+
+*****npm install jsonwebtoken
+
+
+JWT  - Json web token
+       a token(string) used to prove identity 
+       after login, server gives a token 
+       client stores it (browser/mobile)
+       sends token with every request
+
+       user logs in
+       server gives JWT
+       user sends JWT in future requests
+       server verifies token -> allows access
+
+
+*****npm install passport passport-local express-session bcrypt
+
+passport - a tool (middleware) for handling login in node.js
+           user sends login data
+           passport checks it
+           if correct -> user is logged in
+
+
+REST API :
+          A REST API (Representational State Transfer Application Programming Interface) is a way for different systems 
+          to communicate over HTTP using standard methods.
+
+          stateless - every request is independent
+          uses http methods - GET,POST,PUT,DELETE
+          resources via URLs
+          JSON format for data exchange
+
+
+
+CSRF (Cross-site Request Forgery) 
+        login details are stored in bowser as cookies
+        the hackers use that without our knowledge
+
+        to Avoid it
+        websites use a secret code (CSRF token)
+        they block unsafe requests from other websites
+
+XSS (cross site scripting)
+        hacker puts harmful code(js) into a website
+
+        website does not allow scripts from users
+
+
+Build restful API using express
+        1.setup project
+                npm init -y
+                npm install express
+        2.Basic server
+        3.create routes (app.get (..))
+
+        express provides built-in middleware
+            app.use(express.json());
+        this allows the server to read JSON data from requests.
+
+        middleware functions:
+            run before route handlers
+            modify request/response
+
+            eg middleware:
+            app.use((req, res, next) => {
+            console.log(`${req.method} ${req.url}`);
+            next();
+            });
+
+
+

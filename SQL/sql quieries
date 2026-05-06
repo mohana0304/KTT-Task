@@ -1,0 +1,215 @@
+create table students(
+student_id int primary key,
+name varchar(10),
+age int,
+city varchar(10),
+admission_date date
+);
+
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(100),
+    fee DECIMAL(10,2)
+);
+
+CREATE TABLE enrollments (
+    enroll_id INT PRIMARY KEY,
+    student_id INT,
+    course_id INT,
+    marks INT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+
+insert into students values (1, 'Arun', 20, 'Chennai', '2023-06-01'),
+(2, 'Priya', 21, 'Madurai', '2023-06-05'),
+(3, 'Kumar', 19, 'Coimbatore', '2023-06-10');
+
+INSERT INTO courses VALUES
+(101, 'SQL Basics', 5000),
+(102, 'Python', 7000);
+
+INSERT INTO enrollments VALUES
+(1, 1, 101, 85),
+(2, 2, 101, 90),
+(3, 3, 102, 75),
+(4, 1, 102, 88);
+
+
+select * from students where city ='chennai';
+
+select * from students where age > 19 and city='chennai';
+
+select * from students where age > 19 or city='chennai';
+
+select * from students where name like 'A%';
+
+select * from students where age between 19 and 21;
+
+select * from students where city in ('chennai','Madurai');
+
+select * from students where city not in ('chennai','Madurai');
+
+select course_id,avg(marks) as avg_marks from enrollments group by course_id;
+
+select course_id,count(*) as total_students from enrollments group by course_id;
+
+select max(marks) from enrollments;
+
+select course_id,avg(marks) from enrollments group by course_id having avg(marks)>80;
+
+update students set city='trichy' where student_id=3;
+
+delete from students where student_id=2;
+
+
+
+
+
+create table customers (
+    customer_id INT primary key ,
+    name VARCHAR(15) DISTINCT,
+    email VARCHAR(20) unique
+);
+
+create table orders (
+    order_id INT primary key,
+    customer_id INT,
+    order_date DATE,
+    foreign key (customer_id) references customers(customer_id)
+);
+
+create table order_items (
+    order_id INT,
+    product_id INT,
+    quantity INT check(quantity > 0),
+    primary key (order_id, product_id),
+    foreign key (order_id) references orders(order_id)
+);
+
+
+
+insert into customers (customer_id, name, email) values
+(1, 'Ravi', 'ravi@gmail.com'),
+(2, 'Priya', 'priya@gmail.com'),
+(3, 'Arun', 'arun@gmail.com'),
+(4, 'Meena', 'meena@gmail.com'),
+(5, 'Kiran', 'kiran@gmail.com');
+
+insert into orders (order_id, customer_id, order_date) values
+(101, 1, '2025-01-10'),
+(102, 2, '2025-01-11'),
+(103, 3, '2025-01-12'),
+(104, 4, '2025-01-13'),
+(105, 5, '2025-01-14');
+
+insert into order_items (order_id, product_id, quantity) values
+(101, 1001, 2),
+(102, 1002, 1),
+(103, 1003, 5),
+(104, 1004, 3),
+(105, 1005, 4);
+
+select * from customers;
+
+select name,email from customers;
+
+select * from customers where name like'A%';
+
+select * from customers where email like '%gmail%';
+
+select * from orders where customer_id=2;
+
+select * from orders where order_data > '2025-01-12';
+
+select * from customers where customer_id != 3;
+
+select * from customers where customer_id between 1 and 3;
+
+select * from customers where name in ('Arun','priya');
+
+select * from orders where customer_id <> 3;
+
+select * from customers order by name asc;
+
+INSERT INTO customers VALUES(6, 'Suresh', 'suresh@gmail.com'),
+(7, 'Anita', 'anita@gmail.com'),
+(8, 'Vikram', 'vikram@gmail.com');
+
+insert into orders VALUES (106, 6, '2025-01-15'),
+(107, 7, '2025-01-16');
+
+insert into order_items VALUES(106, 1006, 2),
+(107, 1007, 1);
+
+select * from customers;
+select * from order_items;
+select * from orders;
+
+select order_id , name from customers,orders where orders.customer_id =
+customers.customer_id;
+
+insert into orders VALUES(108,3,'2025,1,16');
+
+select * from orders where customer_id=3;
+
+update customers set email="gobi2332@gmail.com" where customer_id=1;
+
+update customers set name=UPPER(name);
+
+select * from customers;
+
+update orders set order_data='2025-01-23' where order_id=106;
+
+alter table customers add phone varchar(10);
+
+desc customers;
+
+alter table customers modify email varchar(25);
+
+desc customers;
+
+alter table customers drop phone;
+
+desc customers;
+
+
+
+select * from order_items;
+
+
+
+select count(*) as customer_count from customers;
+
+select count(*) as Orders_count from orders;
+
+select count(*),max(quantity) from order_items;
+
+select min(quantity) as MIN_Quantity from order_items;
+
+select avg(quantity) as AVG_Quantity from order_items;
+
+select sum(quantity) as Total_Quantity from order_items;
+
+select customer_id,count(*) as total_orders from orders group by customer_id;
+
+select order_id,sum(quantity) as Total_Quantity from order_items group by order_id;
+
+select order_id,avg(quantity) as AVG_Quantity from order_items group by order_id;
+
+select customer_id,count(order_id) as total_orders from orders group by customer_id having count(order_id)>1;
+
+select order_id,sum(quantity) as Total_Quantity from order_items group by order_id having sum(quantity)>2;
+
+SELECT DISTINCT customer_id FROM orders;
+
+SELECT DISTINCT order_id FROM order_items;
+
+SELECT DISTINCT customer_id, order_data FROM orders;
+
+SELECT * FROM customers LIMIT 5;
+
+SELECT * FROM orders ORDER BY order_data DESC LIMIT 3;
+
+SELECT * FROM customers LIMIT 5 OFFSET 5;
+

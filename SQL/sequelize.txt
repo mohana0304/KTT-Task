@@ -1,0 +1,221 @@
+Object relational mapping - 
+        is a programming technique let us to interact with
+        a relational database using objects instead of writing raw sql queries
+
+        table in database - becomes js objects(models /classes)
+        rows - becomes instance of those objects
+        columns - mapped to object properties
+
+        sql queries - become js method callbacks
+
+setting sequelize:
+        npm install sequelize pg pg-hstore - install sequelize for postgreSQL
+        
+        switching between database :
+                dialect: 'mysql'
+
+
+
+
+1.create table
+        const user = sequelize.define('User',{
+        name: DataTypes.STRING,
+        email:DataTypes.STRING,
+        });//create user table with name,email
+        module.exports=user;
+
+        common Data Types:
+                DataTypes.STRING,.INTEGER,.BOOLEAN,.FLOAT,.DATE,.TEXT
+        adding constraints:
+                name:{
+                type:DataType.STRING,
+                allowNull: false //field is required(NOT NULL)
+                }
+                unique:true 
+                primarykey:true
+                autoIncrement: true
+                defaultValue: 18 or any value  based on datatype
+
+                validate:{
+                isEmail:true( built in validator )
+                isNumeric , isAlphanumeric
+                len:[3-10],//lengthn between 3-10
+                isIn: [['admin','user']],
+                notEmpty:true
+                }
+        
+        sequelize does not automatically create tables for that 
+                sequelize.sync();
+                create tables based on models
+
+        await sequelize.sync({ force: true }); - drops existing tables and recreates them
+        { alter: true } - update existing tables to match model . add missing columns
+
+        
+2.row
+        const user = await User.create({
+          name: 'John',
+          email: 'john@example.com'
+        });
+        User.create() -insert single row 
+        User.bulkCreate([{},{},{}]) -insert multiple rows
+3.Read
+        User.findALl()
+        User.findByPk();
+        User.findOne();
+        User.findAndCountAll() - return rows+ count
+4.update 
+        User.update({},{where:{}});
+5.delete 
+        User.destroy({where:{}});
+User.save() - save changes
+User.reload() - refresh from DB 
+
+.upsert() - insert if not exists ,otherwise update
+.findOrCreate() - 
+
+.toJSON() - convert to plain objects
+
+operators:
+    const { Op } = require('sequelize');
+    age: { [Op.gt]: 18 }     
+    age: { [Op.lt]: 60 }    
+    name: { [Op.like]: '%jo%' }
+    id: { [Op.in]: [1,2,3] }
+
+
+
+associations :
+              define relationships between models
+              
+              1.one to one 
+                        each record in table A is linked to one record in table Backend
+                        one user -> one profile //user is parent ,profiile stores the foreign key
+                        user.hasOne(profile);
+                        profile.belongsTo(user);
+
+              2.one to many 
+                        table A can have multiple records in table Backend
+                        one user -> many posts //foreign key goes into post table
+                        user.hasMany(post);
+                        post.belongsTo(user);// post will have userId
+
+              3.many to many
+                        multiple records in table a relate to multiple in table B 
+                        students <-> courses
+                        Student.belongsToMany(Course, { through: 'Enrollment' });
+                        Course.belongsToMany(Student, { through: 'Enrollment' });
+              
+Lazy loading :
+              load data only when needed
+              const user = await User.findByPk(1);//get user
+              const posts = await user.getPosts();//get posts
+              //multiple queries
+        
+eager loading:
+              load related data in one query
+              const user = await User.findByPk(1, {
+              include: Post
+              });
+              
+
+postgreSQL support storing JSON data inside columns, 
+which is useful for flexible or semi-structured data
+
+{
+  "name": "John",
+  "age": 25,
+  "skills": ["JS", "SQL"]
+}
+ 
+ accessing JSON data:
+                     ->  - return JSON object
+                     ->> - return value as TEXT
+                     SELECT params->'name' FROM events;//"John" (JSON format)
+                     SELECT params->>'name' FROM events;// John (plain text)
+ 
+ filtering Data:
+                use JSON values inside where
+                SELECT * FROM events WHERE params->>'name' = 'Click Button';
+                //{ "name": "Click Button" }
+                PostgreSQL allows filtering directly on JSON keys
+ 
+ Accessing JSON arrays:
+                       {  "ids": [10, 20, 30] }
+                       SELECT params->'ids'->0 FROM events;//10
+
+ working with nested JSON:
+                          { 
+                          "preferences": 
+                          {"beta": true  }
+                          }
+                          select * from users where (preferences->>'beta')::boolean IS TRUE;
+                          ->> get value as text
+                          ::boolean onverts to boolean
+
+json - stores raw text
+jsonb - store binary (optimized)
+        faster queries
+        support indexing
+        more operators
+
+->      - get JSON value
+->>     - get text value
+#>      - get nested object
+#>>     - get nested text
+@>      -check if JSON contains value
+
+
+transaction is group multiple database operations into a single unit of work
+that either fully succeeds or fully fails
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+npm install express sequelize pg pg-hstore body-parser
+
+        express - lightweight web framework for node.js
+        sequelize - an orm let us interact with postgresql using javascript 
+        pg - postgresql driver for node.js , sequelize uses this internally to connect to postgresql
+
+        pg-hstore - helps sequelize handle postgreSQL hstore data type
+
+        body-parser - parses incoming request data (JSON,form data)
+
+
+npm install -g pug-cli
+
+

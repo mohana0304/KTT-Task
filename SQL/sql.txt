@@ -122,8 +122,12 @@ Data Types :
             DATETIME/ TIMESTAMP - date+Time
             BOOLEAN 
             JSON 
+            jsonb
             ENUM -restrict values to alist
-            TEXT 
+            TEXT
+            SERIAL - is a pseudo-type  used to create autoincrementing integer columns 
+                    typically for pk
+                     
 
 operators :
     = - equal

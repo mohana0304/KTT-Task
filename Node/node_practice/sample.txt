@@ -1,0 +1,24 @@
+Node JS Architecture
+Before starting some Node JS programming examples, it’s important to have an idea about Node JS architecture. We will discuss about “How Node JS works under-the-hood, what type of processing model it is following, How Node JS handles concurrent request with Single-Threaded model” etc. in this post.
+
+Node JS Single Threaded Event Loop Model
+As we have already discussed, Node JS applications uses “Single Threaded Event Loop Model” architecture to handle multiple concurrent clients. There are many web application technologies like JSP, Spring MVC, ASP.NET, HTML, Ajax, jQuery etc. But all these technologies follow “Multi-Threaded Request-Response” architecture to handle multiple concurrent clients. We are already familiar with “Multi-Threaded Request-Response” architecture because it’s used by most of the web application frameworks. But why Node JS Platform has chosen different architecture to develop web applications. What is the major differences between multithreaded and single threaded event loop architecture. Any web developer can learn Node JS and develop applications very easily. However without understanding Node JS Internals, we cannot design and develop Node JS Applications very well. So before starting developing Node JS Applications, first we will learn Node JS Platform internals.
+
+Node JS Platform
+Node JS Platform uses “Single Threaded Event Loop” architecture to handle multiple concurrent clients. Then how it really handles concurrent client requests without using multiple threads. What is Event Loop model? We will discuss these concepts one by one. Before discussing “Single Threaded Event Loop” architecture, first we will go through famous “Multi-Threaded Request-Response” architecture.
+
+Traditional Web Application Processing Model
+Any Web Application developed without Node JS, typically follows “Multi-Threaded Request-Response” model. Simply we can call this model as Request/Response Model. Client sends request to the server, then server do some processing based on clients request, prepare response and send it back to the client. This model uses HTTP protocol. As HTTP is a Stateless Protocol, this Request/Response model is also Stateless Model. So we can call this as Request/Response Stateless Model. However, this model uses Multiple Threads to handle concurrent client requests. Before discussing this model internals, first go through the diagram below. Request/Response Model Processing Steps:
+
+Clients Send request to Web Server.
+Web Server internally maintains a Limited Thread pool to provide services to the Client Requests.
+Web Server is in infinite Loop and waiting for Client Incoming Requests
+Web Server receives those requests.
+Web Server pickup one Client Request
+Pickup one Thread from Thread pool
+Assign this Thread to Client Request
+This Thread will take care of reading Client request, processing Client request, performing any Blocking IO Operations (if required) and preparing Response
+This Thread sends prepared response back to the Web Server
+Web Server in-turn sends this response to the respective Client.
+Server waits in Infinite loop and performs all sub-steps as mentioned above for all n clients. That means this model creates one Thread per Client request. If more clients requests require Blocking IO Operations, then almost all threads are busy in preparing their responses. Then remaining clients Requests should wait for longer time.
+
